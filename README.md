@@ -20,8 +20,8 @@ The following are preferred guidelines that must be attempted when formatting co
         - Tip: Repeat the steps taken or reiterate the issue.
 
 2. **Avoid Non-Permanent Summary and Descriptions**
-    - Bad: "[css] Added div-id1, _Please review changes_ -_Nick_"
-    - Bad: "[js] Added filterFunction() param, _fixes OCT.10th update_"
+    - Bad: "[css] Add div-id1, _Please review changes_ -_Nick_"
+    - Bad: "[js] Add filterFunction() param, _fixes OCT.10th update_"
 
 3. **Present Tense Only**
     - Bad: "[html] Moved h1-pageHeader"
@@ -42,6 +42,6 @@ The following are preferred guidelines that must be attempted when formatting co
 
 7. **Prefer Tag with Filetype**
     - if a single file-type is corrected/added, in the summary list the file-type in [ ].
-    - _ex._ [js] [html] [css] [text] [json]
+    - _ex._ [js] [html] [css] [txt] [json]
 
-8. **Avoid Jargon and Acronyms**
+8. **Avoid Jargon, Acronyms, and Time-Critical/Sensitive**
