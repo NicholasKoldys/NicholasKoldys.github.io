@@ -19,13 +19,16 @@ The following are preferred guidelines that must be attempted when formatting co
                 Setting sign-in button to true fixes the issue."
         - Tip: Repeat the steps taken or reiterate the issue.
 
-2. **Avoid Non-Permanent Messages**
+2. **Avoid Non-Permanent Summary and Descriptions**
     - Bad: "[css] Added div-id1, _Please review changes_ -_Nick_"
-    - Bad: "[js] Added filterFunction() param, _fixes OCT update_"
+    - Bad: "[js] Added filterFunction() param, _fixes OCT.10th update_"
 
 3. **Present Tense Only**
+    - Bad: "[html] Moved h1-pageHeader"
+    - Good: "[html] Update h1-pageHeader to line-26"
+    - Tip: Remember the messages explain a group of related changes and must be able to exist individualy if other commits are rolled back.
 
-4. **Bug Fixes Require** **Label** and **Number**
+4. **Bug Fixes Require Label and Number**
     - _ex._ bugfix:00001 title summary
 
 5. **Prefer Atomic Commits**
@@ -35,9 +38,10 @@ The following are preferred guidelines that must be attempted when formatting co
 
 6. **Prefer Multi-Line Commit Messages**
     - always attempt to use a summary and description message model.
+    - if commits are better said in a few words _6 or less_ only use summary.
 
 7. **Prefer Tag with Filetype**
     - if a single file-type is corrected/added, in the summary list the file-type in [ ].
     - _ex._ [js] [html] [css] [text] [json]
 
-8. **Avoid Jargon**
+8. **Avoid Jargon and Acronyms**
