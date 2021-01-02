@@ -12,6 +12,7 @@ The following are preferred guidelines that must be attempted when formatting co
     1. **Summary** - outlines what is discussed.
         - Bad: "[html] Fix typos"
         - Good: "[html] Fix typos in main body article-2"
+        - Note: Keep under 50 characters.
     2. **Description** - describes commit in further detail.
         - Bad: "Admin sign-in button state false to true."
         - Good: "When admin access screen launched, sign in button is greyed out and 
@@ -45,3 +46,11 @@ The following are preferred guidelines that must be attempted when formatting co
     - _ex._ [js] [html] [css] [txt] [json]
 
 8. **Avoid Jargon, Acronyms, and Time-Critical/Sensitive**
+
+
+## Useful Git
+
+- git commit -m "Subject" -m "Description..."
+
+- git status
+    - quick way to see current branch, changes, un/tracked files.
