@@ -83,6 +83,23 @@
     </section>
     <section id="contact">
       <!-- quick reference to contact with methods; plus social media accounts -->
+      <div>
+        <form>
+          <input type="text" id="contactNameField" name="name" required placeholder="Name (*)" minlength="2" maxlength="24" size="10"/>
+          <input type="tel" id="contactTelField" name="telephone" placeholder="Phone Number" minlength="2" maxlength="24" size="10"/>
+          <input type="email" id="contactEmailField" name="email" required placeholder="Email Address (*)" minlength="2" maxlength="24" size="10"/>
+          <textarea id="contactMessageField" name="message" rows="5" cols="33">Message content you want to send (*)</textarea>
+          <div>
+            <!-- Reactive bot filter needed to avoid spam -->
+            <!-- Email Protection required for web-trollers -->
+            <button type="button">Send Message</button>
+            <button type="button">Privacy Policy</button>
+          </div>
+        </form>
+      </div>
+      <div>
+        <svg> Social Media Icon</svg>
+      </div>
     </section>
     <section id="resume">
       <!-- Curriculum vitae (CV) or Résumé -->
