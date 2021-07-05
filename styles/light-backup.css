@@ -1,0 +1,133 @@
+/* @import url(''); */
+
+/* Color Palette
+main: 
+secondary: 
+background: 
+*/
+
+/* 
+padding/margin: top right bottom left
+padding/margin: top right+bottom left
+*/
+
+@supports (grid-area: auto) {
+    
+}
+
+/* Global
+-------------------------------------*/
+:root {
+    --standard-size: 1rem; /* Custom Properties - creates a variable that can be used throughout css */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a[href^="http"] {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png) no-repeat right;
+    padding-right: 14px;
+}
+
+a[href^="http"]::after {
+    content: " (website)";
+}
+
+[href$=".pdf"]::after {
+    content: " (PDF)";
+}
+
+/* Lord Vader Former Handle Anakin */
+a:link {
+
+}
+a:visited {
+
+}
+/* avoid just color focus for accessiblity */
+a:focus {
+
+}
+a:hover {
+
+}
+a:active {
+
+}
+
+/* Accessibility for Forms */
+:required {
+
+}
+:optional {
+
+}
+:checked {
+
+}
+:disabled {
+
+}
+:enabled {
+
+}
+
+/* Table of Contents Focus */
+:target {
+
+}
+
+/* Global Header
+-------------------------------------*/
+
+
+
+
+/* Global Site Navigation
+-------------------------------------*/
+
+
+
+
+/* Global Footer
+-------------------------------------*/
+
+
+
+/* Responsive Design
+-------------------------------------*/
+@media all {
+
+}
+
+@media (width: 700px) {
+
+}
+
+@media screen and (orientation: landscape) {
+
+}
+
+@media screen and (min-width: 30em) and (orientation: landscape) {
+
+}
+
+/* Printers and Print related dispalys */
+@media print {
+    
+}
+
+/* Screen Reading devices */
+@media speech {
+    
+}
+
+/* Non-Print or Non-Speech */
+@media screen {
+    
+}
+
+/* optionally <link rel="stylesheet" media="screen and (max-width: 480px)" href="mobile.css"> */
