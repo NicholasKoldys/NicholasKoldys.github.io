@@ -59,8 +59,8 @@ div#right-rail {
 }
 
 img {
-    padding: clamp(0ch, 1vw, 10ch);
-    object-fit: contain;
+    /* padding: clamp(0ch, 1vw, 10ch); */
+    /* object-fit: contain; */
     /* aspect-ratio: 16/9; */
 }
 
@@ -406,7 +406,7 @@ section#section-1 {
 }
 
 section#section-1 > #intro-article {
-    background-color: brown;
+    /* background-color: brown; */
     padding: var(--extra-pad);
     flex-grow: 1;
     display: flex;
@@ -416,11 +416,15 @@ section#section-1 > #intro-article {
 }
 
 section#section-1 > #eye-candy-1 {
-    background-color: chocolate;
+    /* background-color: chocolate; */
     flex-grow: 1;
     display: flex;
     justify-content: center;
 }
+
+/* #eye-candy-1 > img {
+    border-radius: 50%;
+} */
 /*
 --
 --
@@ -443,18 +447,19 @@ section#section-2 {
 
 section#section-2 > article {
     display: flex;
-    flex-direction: row;
-    justify-content: left;
+    flex-direction: column;
+    justify-content: center;
 
     /* TODO Remove or MAKE BETTER */
     border: 0.3rem solid black;
 }
 
 section#section-2 > article > img {
-    /* height: clamp(50%, 10vh, 50%);
-    width: clamp(50%, 10vw, 50%); */
+    height: clamp(50%, 10vh, 100%);
+    width: clamp(50%, 10vw, 100%);
     /* height: clamp(20ch, 15vh, 30ch); */
-    /* flex-grow: 1; */
+    /* justify-content: center; */
+    flex-grow: 1;
     /* object-position: top; */
 }
 
@@ -792,7 +797,7 @@ aside#accessibility-scroll {
 
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1360px) {
 
     /* body {
         
@@ -829,7 +834,7 @@ aside#accessibility-scroll {
     }
     
     section#section-2 > article {
-        justify-content: left;
+        /* justify-content: left; */
     }
 
     section#section-2 > article > img {
@@ -869,6 +874,7 @@ aside#accessibility-scroll {
     }
 }
 
+/*
 @media (min-width: 800px) and (max-width: 1360px) {
 
     section#section-2 {
@@ -876,20 +882,17 @@ aside#accessibility-scroll {
         row-gap: 0;
         grid-template-areas: none;
         grid-template-columns: auto;
-        /* grid-template-rows: minmax(50vh, 80vh); */
         grid-template-rows: auto;
-        /* * Set the grid to basically one element */
         place-items: center;
     }
     section#section-2 > article {
-        /* * Hide all the elements... */
         display: none;
     }
     section#section-2 > article#project-dyn {
-        /* * ...Then show only the dynamic element */
         display: flex;
     }
-}
+} 
+*/
 
 @media (min-width: 1090px) {
 
