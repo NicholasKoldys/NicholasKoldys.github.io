@@ -50,9 +50,10 @@ var stepAnimationFrame = function() {
 
       // * Only need to check timelinevisibility in one direction - DOWN. - on scroll up the timeline should not change.
       // * asideNav display is controlled in mobile overrides
-      if(asideNav.style.display != "none") {
+      // TODO Enable Side Nav
+      /* if(asideNav.style.display != "none") {
         toggleTimelineVisibility(window, sectionTitles, timeline, sec);
-      }
+      } */
     } else { 
       toggleClass(sec, "shade-overlay-light", isScrollPercentOnElement(window, sec, getELementPageDirection(window, sec), 15));
     }
@@ -61,10 +62,11 @@ var stepAnimationFrame = function() {
   // * Just for flavor js
   scrollWithHeader(header);
   // * asideNav display is controlled in mobile overrides
-  if(asideNav.style.display != "none") {
+  // TODO Enable Side Nav
+  /* if(asideNav.style.display != "none") {
     setSegmentSNavHeight(timeline, sections);
     setTitlePosition(sectionTitles);
-  }
+  } */
 
   window.requestAnimationFrame( stepAnimationFrame );
 }

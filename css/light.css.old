@@ -1,0 +1,989 @@
+@import url('https://fonts.googleapis.com/css2?family=Kufam:wght@100;900&family=Montserrat:wght@300&display=swap');
+
+/**-----------------------------------
+/**-------------Global
+/**-------------------------------------*/
+
+@supports (grid-area: auto) {
+    
+}
+
+:root {
+    --standard-size: 1rem; /* Custom Properties - creates a variable that can be used throughout css */
+
+    --content-height: clamp(25ex, 90vh, 200ex);
+    --content-width: clamp(20ch, 80vw, 100ch);
+
+    --standard-pad: clamp(2ch, 2vw, 4ch);
+    --extra-pad: clamp(5ch, 4vw, 10ch);
+    --primary-dark: #141414;
+    --secondary-dark: #242324;
+    --tertiary-dark: #302f2f;
+    --react-dark: #474747;
+    --text-primary: #fff0f0;
+
+    --content-family: 'Montserrat', Helvetica Arial, Arial, sans-serif;
+    --heading-family: 'Kufam', Helvetica Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--content-family);
+    display: grid;
+    grid-template-areas:
+    "hd hd hd"
+    "lr mn rr"
+    "ft ft ft";
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+
+    margin: 0;
+    padding: 0;
+    /* background: linear-gradient(180deg, var(--primary-dark), var(--tertiary-dark)); */
+    color: var(--text-primary); /*Text Color*/
+    
+    background: radial-gradient(100% 225% at 100% 0%, #FAFF00 0%, #000000 100%), linear-gradient(235deg, #FF7A00 0%, #000000 100%), linear-gradient(20deg, #241E92 0%, #241E92 30%, #5432D3 calc(30% + 1px), #5432D3 35%, #7B6CF6 calc(35% + 1px), #7B6CF6 50%, #E5A5FF calc(50% + 1px), #E5A5FF 100%), linear-gradient(120deg, #110133 0%, #110133 40%, #00918E calc(40% + 1px), #00918E 60%, #4DD599 calc(60% + 1px), #4DD599 70%, #FFDC34 calc(70% + 1px), #FFDC34 100%);
+    background-blend-mode: overlay, hard-light, overlay, normal;
+}
+
+div#left-rail {
+    grid-area: lr;
+    display: none;
+}
+div#right-rail {
+    grid-area: rr;
+    display: none;
+}
+
+img {
+    /* padding: clamp(0ch, 1vw, 10ch); */
+    /* object-fit: contain; */
+    /* aspect-ratio: 16/9; */
+}
+
+a[href^="http"]::after {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/d/d9/VisualEditor_-_Icon_-_External-link.svg) no-repeat right;
+    padding-right: 1.2ch;
+}
+
+a[href$=".pdf"] {
+    /* content: " [PDF]"; */
+    background: url(https://upload.wikimedia.org/wikipedia/commons/3/38/Icon_pdf_file.svg) no-repeat right;
+    padding-right: 1.2ch;
+}
+
+/* a[href^="http"]::after {
+    content: " (website)";
+} */
+
+a[mailto] {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/4/42/Icon_External_Link_E-Mail.png) no-repeat right;
+    padding-right: 1.2ch;
+}
+
+h1, h2 {
+    font-family: var(--heading-family);
+}
+
+h3, p, pre, a {
+    font-family: var(--content-family);
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+[id] {
+    scroll-margin-top: 7ex;
+}
+
+
+/**-----------------------------------
+/**----------Accessibility
+/**-------------------------------------*/
+
+
+
+
+/**-----------------------------------
+/**----------Global Header
+/**-------------------------------------*/
+
+header { 
+    grid-area: hd;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--secondary-dark);
+    /* width: 100%; */
+    /* height: auto; */
+    height: clamp(4ch, 5vh, 8ch);
+}
+header > a#home-link {
+    display: block;
+    /* background: url(../../common/image/cybernewty-avatar.jpg) no-repeat;
+    background-size: contain; */
+    width: clamp(5ch, 4vw, 10ch);
+    margin-left: 1ch;
+}
+header > a#home-link > img {
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+header > nav > ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+nav.crumbs {
+    flex-grow: 1;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+nav.crumbs > ul#crumb-list { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+nav.crumbs > ul#crumb-list > li {
+    display: flex;
+}
+nav.crumbs > ul#crumb-list > li > a {
+    display: block;
+    font-family: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    text-decoration: none;
+    font-weight: 900;
+    color: inherit;
+    width: 100%;
+    padding: 1ch 2ch;
+    transition: all .2s linear;
+}
+nav.crumbs > ul#crumb-list > li > a::after {
+    content: " / ";
+}
+nav.crumbs > ul#crumb-list > li > a:hover {
+    color: white;
+    cursor: pointer;
+    text-shadow: 3px 3px var(--react-dark);
+    background-color: var(--tertiary-dark);
+}
+nav.crumbs > ul#crumb-list > li > a:visited {
+    color: var(--text-primary);
+}
+
+
+nav.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2ch;
+    transition: all .2s linear;
+}
+/* nav.menu:hover {
+    background-color: var(--react-dark);
+} */
+nav.menu > button#burger-menu {
+    /* position: relative; */
+    /* background: url(../../common/image/bars.svg) center no-repeat;
+    background-size: contain; */
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+nav.menu > button#burger-menu:hover > svg#burger-icon {
+    fill: var(--react-dark);
+}
+nav.menu > button#burger-menu > svg#burger-icon {
+    padding: 0;
+    width: clamp(6ch, 3vw, 8ch);
+    height: 100%;
+    fill: var(--text-primary);
+    transition: all .2s linear;
+}
+/* nav.menu > button#burger-menu > svg#burger-icon :hover {
+    
+} */
+nav.menu > ul#menu-list {
+    z-index: 110;
+    display: none;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: center;
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    background-color: var(--tertiary-dark);
+}
+nav.menu > ul#menu-list > li {
+    flex-grow: 1;
+    font-size: larger;
+    width: 100%;
+}
+nav.menu > ul#menu-list > li > a {
+    display: block;
+    font-family: var(--heading-family);
+    font-style: inherit;
+    font-size: 100%;
+    text-decoration: none;
+    font-weight: 900;
+    color: inherit;
+    padding: 1ch 2ch;
+    transition: all .2s linear;
+}
+nav.menu > ul#menu-list > li > a:hover {
+    color: var(--text-primary);
+    background-color: var(--react-dark);
+    animation: font-pulse 2s linear 0s infinite alternate both;
+}
+nav.menu > ul#menu-list > li > a:visited {
+    color: var(--text-primary);
+}
+
+
+/**-----------------------------------
+/**------Global Site Navigation
+/**-------------------------------------*/
+
+
+
+
+/**-----------------------------------
+/**----------Global Footer
+/**-------------------------------------*/
+
+footer {
+    grid-area: ft;
+    /* display: flex;
+    flex-direction: row; */
+}
+
+footer > nav > ul {
+    list-style-type: none;
+}
+
+footer > .footer-section {
+    /* background-color: darkseagreen; */
+    margin: .5rem;
+}
+
+
+/**-----------------------------------
+/**-----------Site Elements
+/**-------------------------------------*/
+
+main {
+    grid-area: mn;
+    display: grid;
+    row-gap: 10vh; /* * NOTE * Change with aside-nav row-gap */
+    grid-template-areas:
+    "sNav s1 aScroll"
+    "sNav s2 aScroll"
+    "sNav s3 aScroll"
+    "sNav s4 aScroll";
+    grid-template-columns: auto 1fr auto;
+    /* grid-template-rows: repeat(4, minmax(70vh, auto)); */
+    grid-template-rows: repeat(4, auto);
+}
+/*
+--
+--
+--
+*/
+aside#aside-nav {
+    grid-area: sNav;
+    z-index: 10;
+    display: grid;
+    row-gap: 10vh; /* * Make sure it matches main's row-gap */
+    grid-template-areas:
+    "sNav1"
+    "sNav2"
+    "sNav3"
+    "sNav4";
+    grid-template-columns: 3vw;
+    grid-template-rows:  repeat(4, auto);
+    padding-left: clamp(1ch, 1vw, 3ch);
+}
+
+/** SEGMENTS */
+
+aside#aside-nav > div.color-timeline-segment {
+    /* margin-left: 1vw; */
+    height: 0; /* * Set with JS */
+    background-color: var(--primary-dark);
+    transition: height .1s linear, opacity .5s linear;
+}
+aside#aside-nav > div.section-1 {
+    grid-area: sNav1;
+    background-color: darkred;
+    text-decoration-color: darkred;
+}
+aside#aside-nav > div.section-2 {
+    grid-area: sNav2;
+    background-color: darkgreen;
+    text-decoration-color: darkgreen;
+}
+aside#aside-nav > div.section-3 {
+    grid-area: sNav3;
+    background-color: darkblue;
+    text-decoration-color: darkblue;
+}
+aside#aside-nav > div.section-4 {
+    grid-area: sNav4;
+    background-color: darkorange;
+    text-decoration-color: darkorange;
+}
+
+/** TITLES */
+
+aside#aside-nav > div.color-timeline-segment > span.section-title {
+    z-index: 20;
+    position: absolute;
+    padding: 2ch;
+    transition: color 1s linear, opacity .2s linear;
+}
+span.section-title > a {
+    font-family: var(--heading-family);
+    text-decoration-line: underline;
+    text-decoration-thickness: .5ex;
+    font-size: x-large;
+    font-weight: 900;
+    color: inherit;
+}
+span.section-title > a:visited {
+    color: var(--text-primary);
+}
+span.section-title > a:hover {
+    color: var(--text-primary);
+}
+
+
+/*
+--
+--
+--
+*/
+/** CONTENT SECTION */
+
+section {
+    /* background-color: var(--primary-dark); */
+    background-color:rgba(0, 0, 0, 0.82);
+    opacity: 1;
+    transition: background-color 1s linear, opacity 1s linear;
+    padding: var(--extra-pad);
+}
+/*
+--
+--
+--
+*/
+section#section-1 {
+    grid-area: s1;
+    display: flex;
+}
+
+section#section-1 > #intro-article {
+    /* background-color: brown; */
+    padding: var(--extra-pad);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+
+section#section-1 > #eye-candy-1 {
+    /* background-color: chocolate; */
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* #eye-candy-1 > img {
+    border-radius: 50%;
+} */
+/*
+--
+--
+--
+*/
+section#section-2 {
+    grid-area: s2;
+    display: grid;
+    column-gap: var(--standard-pad);
+    row-gap: var(--standard-pad);
+    grid-template-areas:
+    "p1 p2"
+    "p3 p3"
+    "p4 p5";
+    grid-template-columns: repeat(2, 1fr);
+    /* TODO MAX was clamp( 30ex, 10vh, 100ex) */
+    /* grid-template-rows: repeat(3, minmax(25%, auto ) ); */
+    grid-template-rows: repeat(3, auto);
+}
+
+section#section-2 > article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /* TODO Remove or MAKE BETTER */
+    border: 0.3rem solid black;
+}
+
+section#section-2 > article > img {
+    height: clamp(50%, 10vh, 100%);
+    width: clamp(50%, 10vw, 100%);
+    /* height: clamp(20ch, 15vh, 30ch); */
+    /* justify-content: center; */
+    flex-grow: 1;
+    /* object-position: top; */
+}
+
+section#section-2 > article > div.project-desc {
+    /* flex-grow: 2; */
+    /* width: clamp(20ch, 50vw, 50ch); */
+    padding: var(--standard-pad);
+}
+
+/* section#section-2 > article > div.project-desc > p {
+    height: clamp( 10ch, 10vh, 20ch );
+    overflow: auto;
+} */
+/* section#section-2 > article#project-3-lrg >  */
+div.project-desc > p {
+    height: clamp( 10ex, 20vh, 50ex );
+    overflow: auto;
+}
+
+section#section-2 > article#project-1-sm {
+    grid-area: p1;
+}
+
+section#section-2 > article#project-2-sm {
+    grid-area: p2;
+}
+
+section#section-2 > article#project-3-lrg {
+    grid-area: p3;
+    /* display: flex; */
+}
+section#section-2 > article#project-3-lrg > img#image-main  {
+    height: clamp( 30ex, 55vh, 60ex );
+}
+section#section-2 > article#project-3-lrg > div.project-desc > div.image-selection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+section#section-2 > article#project-4-sm {
+    grid-area: p4;
+}
+
+section#section-2 > article#project-5-sm {
+    grid-area: p5;
+}
+
+section#section-2 > article#project-dyn {
+    display: none;
+    flex-direction: row;
+    width: 100%;
+    /* height: 100%; */
+}
+
+section#section-2 > article#project-dyn > button {
+    border: none;
+    cursor: pointer;
+    /* background: url(../../common/image/bars.svg) center no-repeat;
+    background-size: contain; */
+    width: clamp(10ch, 7vw, 12ch);
+    background-color: var(--tertiary-dark);
+}
+section#section-2 > article#project-dyn > button:hover {
+    background-color: var(--react-dark);
+}
+
+section#section-2 > article#project-dyn > div#project-viewer {
+    /* flex-grow: 1; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    width: clamp(70ch, 100%, 120ch);
+    padding: clamp(3ch, 2%, 5ch);
+}
+
+section#section-2 > article#project-dyn > div#project-viewer > div#project-images {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+section#section-2 > article#project-dyn > div#project-viewer > div#project-images > div#image-stack-1 {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+section#section-2 > article#project-dyn > div#project-viewer > div#project-images > div#project-main-image-holder {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    width: 60vw;
+    height: auto;
+    touch-action: pan-x;
+}
+section#section-2 > article#project-dyn > div#project-viewer > div#project-images > div#project-main-image-holder > img {
+    height: clamp(20ex, 48vh, 60ex);
+    width: clamp(20ch, 35vw, 60ch);
+}
+section#section-2 > article#project-dyn > div#project-viewer > div#project-images > div#image-stack-2 {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/*
+--
+--
+--
+*/
+section#section-3 {
+    grid-area: s3;
+    display: grid;
+    place-items: center;
+}
+
+section#section-3 > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* height: clamp(25ex, 90vh, 200ex); */
+    height: auto;
+    width: clamp(20ch, 80vw, 100ch);
+    background-color: var(--tertiary-dark);
+    padding: var(--standard-pad);
+}
+
+section#section-3 > form > :is(input, select, textarea, button) {
+    font-family: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    color: black;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: var(--standard-pad);
+    margin: 2ex 0;
+    /* border: 1px solid #ccc; */
+    border-radius: 1ch;
+}
+section#section-3 > form > label > b {
+    color: red;
+}
+  
+section#section-3 > form > button[type=submit] {
+    display: block;
+    font-weight: 900;
+    color: inherit;
+    background-color: #4CAF50;
+    padding: var(--extra-pad);
+    margin: 4ex 0;
+    border: none;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+section#section-3 > form > button[type=submit]:hover {
+    color: white;
+    text-shadow: 3px 3px var(--react-dark);
+    background-color: #265e29;
+}
+/*
+--
+--
+--
+*/
+section#section-4 {
+    grid-area: s4;
+    display: grid;
+    place-items: center;
+    height: auto;
+    /* place-items: center; */
+}
+
+section#section-4 > article#resume {
+    display: grid;
+    column-gap: 3vw;
+    row-gap: 3vh;
+    grid-template-areas:
+    "Rti Rti"
+    "Rcon Rcon"
+    "Robj Robj"
+    "Rbac Rabt"
+    "Rexp Rabt";
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(5, auto);
+    /* padding: 0 clamp(0ch, 10vw, 10ch); */
+    width: clamp(50ch, 100%, 100ch);
+}
+
+section#section-4 > article#resume h2 {
+    text-decoration: underline;
+    text-decoration-thickness: .5ex;
+    text-decoration-skip: none;
+}
+
+section#section-4 > article#resume a {
+    text-decoration: none;
+    color: inherit;
+    /* transition: all .5s linear; */
+}
+section#section-4 > article#resume a:hover {
+    text-decoration: underline var(--text-primary) .5ex;
+    animation-name: breathing-underline-pulse-text;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transition: all .5s linear;
+}
+
+section#section-4 > article#resume > h1#resume-title {
+    grid-area: Rti;
+    display: block;
+    text-align: center;
+}
+section#section-4 > article#resume > h1#resume-title::first-line {
+    text-decoration: underline;
+    text-decoration-thickness: .3ex;
+}
+
+section#section-4 > article#resume > div#resume-contact {
+    grid-area: Rcon;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section#section-4 > article#resume > div#resume-contact > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2ex 4ch;
+}
+section#section-4 > article#resume > div#resume-contact > a > svg {
+    width: 10ch;
+    height: auto;
+    fill: var(--text-primary);
+}
+section#section-4 > article#resume > div#resume-contact > a > svg#git-logo:hover {
+    fill: lightskyblue;
+}
+section#section-4 > article#resume > div#resume-contact > a > svg#li-logo:hover {
+    fill: #2766b1;
+}
+
+section#section-4 > article#resume > div#resume-obj {
+    grid-area: Robj;
+}
+
+section#section-4 > article#resume > div#resume-back {
+    grid-area: Rbac;
+}
+section#section-4 > article#resume > div#resume-back p::marker {
+}
+
+section#section-4 > article#resume > div#resume-exp {
+    grid-area: Rexp;
+}
+section#section-4 > article#resume > div#resume-exp a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+section#section-4 > article#resume > div#resume-exp #li-short-logo {
+    width: 4ch;
+    height: auto;
+    padding: 0 2ch;
+}
+
+section#section-4 > article#resume > div#resume-about {
+    grid-area: Rabt;
+}
+section#section-4 > article#resume > div#resume-about li {
+    padding: 1ch;
+}
+
+section#section-4 > article#resume > div#resume-about > div#resume-cert {
+}
+
+section#section-4 > article#resume > div#resume-about > div#resume-skills {
+}
+
+section#section-4 > article#resume > div#resume-about > div#resume-projects {
+}
+/*
+--
+--
+--
+*/
+/* ! temp */
+section#temp {
+    height: 150vh;
+}
+/*
+--
+--
+--
+*/
+/** OVERLAYS - JS */
+
+.shade-overlay-light {
+    opacity: .15;
+}
+.shade-overlay-heavy {
+    color: var(--primary-dark);
+    opacity: 0;
+}
+/*
+--
+--
+--
+*/
+/* TODO - Remove the bar and replace with finger space in elements*/
+aside#accessibility-scroll {
+    grid-area: aScroll;
+    /* width: 2rem; */
+    /* background-color: beige; */
+}
+/*
+--
+--
+--
+*/
+
+
+/*-----------------------------------
+--------Responsive Design
+-------------------------------------*/
+
+/* NOTE: This section must fall after changes or it will be overwritten */
+
+@media all {
+
+}
+
+@media (max-width: 1360px) {
+
+    /* body {
+        
+    } */
+
+    main {
+        row-gap: 5rem;
+        column-gap: 0;
+        grid-template-columns: 1fr auto ;
+        /* grid-template-rows: repeat(3, minmax(70vh, auto)); */
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+        "s1 aScroll"
+        "s2 aScroll"
+        "s3 aScroll"
+        "s4 aScroll";
+    }
+
+    aside#aside-nav {
+        display: none;
+    }
+
+    section {
+        padding: var(--standard-pad);
+    }
+
+    section#section-1 {
+        flex-direction: column-reverse;
+    }
+
+    section#section-2 {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    section#section-2 > article {
+        /* justify-content: left; */
+    }
+
+    section#section-2 > article > img {
+    }
+
+    section#section-2 > article > div.project-desc {
+    }
+
+    /* * Selector is specific above so to override it must match specificity. */
+    /* section#section-2 > article > div.project-desc > p {
+        height: clamp(5ch, 8vh, 15ch);
+        width: clamp(20ch, 50vw, 40ch);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } */
+    /* * .. Not unless you structure the css to not be as selective.. */
+    /* section#section-2 > article#project-3-lrg > */
+    div.project-desc > p {
+        /* * this method isn't working quiet yet - still shows sentences beyond line-clamp
+         display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical; */
+        height: clamp(5ex, 8vh, 15ex);
+        width: clamp(20ch, 50vw, 40ch);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    section#section-2 > article#project-3-lrg > img#image-main {
+        height: auto;
+    }
+
+    section#section-2 > article#project-3-lrg > div.project-desc > div.image-selection {
+        display: none;
+    }
+}
+
+/*
+@media (min-width: 800px) and (max-width: 1360px) {
+
+    section#section-2 {
+        column-gap: 0;
+        row-gap: 0;
+        grid-template-areas: none;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        place-items: center;
+    }
+    section#section-2 > article {
+        display: none;
+    }
+    section#section-2 > article#project-dyn {
+        display: flex;
+    }
+} 
+*/
+
+@media (min-width: 1090px) {
+
+    section#section-2 > article#project-dyn > div#project-viewer > div#project-images > div#image-stack-1 {
+        display: flex;
+    }
+
+    /* * Only reveal the second image and set the images height and width so it cuts off the extra. */
+    section#section-2 > article#project-dyn > div#project-viewer > div#project-images > div#project-main-image-holder {
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        height: clamp(20ex, 48vh, 60ex);
+        width: clamp(20ch, 35vw, 60ch);
+    }
+
+    section#section-2 > article#project-dyn > div#project-viewer > div#project-images > div#image-stack-2 {
+        display: flex;
+    }
+}
+
+@media (min-width: 1360px) {
+
+    /* section#section-2 > article > div.image-box {
+        flex-grow: 1;
+    }
+
+    section#section-2 > article > div.project-desc {
+        width: clamp(20ch, 50vw, 50ch);
+    } */
+}
+
+@media (min-width: 1920px) {
+
+    div#left-rail {
+        display: block;
+        /* height: 100%; */
+        /* width: 25vw; */
+        background-color: wheat;
+    }
+    div#right-rail {
+        display: block;
+        /* height: 100%; */
+        /* width: 25vw; */
+        background-color: wheat;
+    }
+}
+
+@media screen and (orientation: landscape) {
+
+}
+
+@media screen and (min-width: 30em) and (orientation: landscape) {
+
+}
+
+/* Printers and Print related dispalys */
+@media print {
+    
+}
+
+/* Screen Reading devices */
+@media speech {
+    
+}
+
+/* Non-Print or Non-Speech */
+@media screen {
+    
+}
+
+@keyframes breathing-underline-pulse-text {
+    0%  { text-decoration: underline var(--text-primary) .5ex ; }
+    33% { text-decoration: underline var(--react-dark) .5ex ; }
+    66% { text-decoration: underline var(--react-dark) .5ex ; }
+    99% { text-decoration: underline var(--text-primary) .5ex ; }
+}
+
+@keyframes font-pulse {
+    from {
+      font-weight: 100;
+    }
+    to {
+      font-weight: 900;
+    }
+  }
+
+/* optionally <link rel="stylesheet" media="screen and (max-width: 480px)" href="mobile.css"> */
+
+/*  ! This is used to check style sheet leading time - 
+    ! DO NOT DELETE ! */
+#style-sheet {
+    z-index: 0
+}

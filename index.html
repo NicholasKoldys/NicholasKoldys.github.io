@@ -15,7 +15,7 @@
 
   <!-- Pre-Initialization Scripts -->
   <script src="javascript/enivronment-variables.js" defer></script>
-  <script src="javascript/temp-debug.js" defer></script>
+  <!-- <script src="javascript/temp-debug.js" defer></script> -->
   <script src="javascript/element-dimensions-utilities.js" defer></script>
   <script src="javascript/inview-port-utilities.js" defer></script>
   <script src="javascript/dynamic-content.js" defer></script>
@@ -26,7 +26,9 @@
 <body>
   <header id="header">
     <!-- Header describes the Head Information for the Body of the document and is site wide -->
-    <a id="home-link" class="logo" href="index.html" aria-label="Go to Nicholas Koldys .dev"><img src="./images/nk-no-back.png" alt=""/></a>
+    <a id="home-link" class="logo" href="index.html" aria-label="Go to Nicholas Koldys .dev">
+      <div id="logo-box"><img src="./images/nk-no-back.png" alt=""/></div>
+    </a>
 
     <nav class="crumbs">
       <ul id="crumb-list">
@@ -74,45 +76,27 @@
     You are currently disabling Javascript - this site is unable to show certain content - Please consider enabling Javascript!
   </noscript>
 
-  <div id="left-rail"></div>
+  <!-- <div id="left-rail"></div> -->
 
   <main>
 
-    <aside id="aside-nav">
-      <div class="color-timeline-segment section-1">
-        <span class="section-title"><a href="#section-1">Title 1</a></span>
-      </div>
-      <div class="color-timeline-segment section-2">
-        <span class="section-title"><a href="#section-2">Title 2</a></span>
-      </div>
-      <div class="color-timeline-segment section-3">
-        <span class="section-title"><a href="#section-3">Title 3</a></span>
-      </div>
-      <div class="color-timeline-segment section-4">
-        <span class="section-title"><a href="#section-4">Title 4</a></span>
-      </div>
-
-      <!--<div id="dyn-nav">
-        <a id="collapsed-segment-template" class="collapsed-segment"></a>
-      </div>-->
-    </aside>
-
     <section id="section-1">
       <article id="intro-article">
-        <h1>Nicholas Koldys</h1>
+        <div id="name-main-pic">
+          <h1>Nicholas Koldys</h1>
+          <!-- Main Image / Artistic Headshot  -->
+          <div id="eye-candy-1">
+            <img src="./images/profile-pic-me1-artsy-400x400.png" alt="Picture of me in Vietnam, wearing a really nice fitting suit."/>
+          </div>
+        </div>
         <h2>Web | App | Software Developer</h2>
         <p>I am an aspiring developer focused on design, creation, and delivery of experiences through websites, applications, and collaborations of all sorts.  This site is a Portfolio of projects.  Please feel free to explore and contact me.  <a href="#section-4">Learn more ></a></p>
       </article>
-
-      <!-- Main Image / Artistic Headshot  -->
-      <div id="eye-candy-1">
-        <img src="./images/main-headshot-cir-artsy.png" alt="Picture of me in Vietnam, wearing a really nice fitting suit."/>
-      </div>
     </section>
 
     <section id="section-2">
       <article id="project-1-sm">
-        <img src="images/project-pic-inv1.png" alt=""/>
+        <img src="images/project-pic-inv1-500xw.png" alt=""/>
         <div class="project-desc">
           <h3>Java - Inventory Management System</h3>
           <p>Controlling data by creating, reading, updating, and deleting it, is the bread, butter, and soul of software developers. This software project is my take from the graphical user interface to the database, on how these applications should be set up. Please feel free to view my code and view the demo of this project by following the "learn more" link.</p>
@@ -121,7 +105,7 @@
       </article>
 
       <article id="project-2-sm">
-        <img src="images/project-pic-and1.png" alt=""/>
+        <img src="images/project-pic-and1-500x500.png" alt=""/>
         <div class="project-desc">
           <h3>Android - Class Tracker/Reminder/Notetaking App</h3>
           <p>Mobile, web, and native apps are the forefront of users expectations and I built one! It may be a simple note taking app but I enjoyed mapping out the application from the ground up, recieving the satisfying "dings" from notifications, and allowing it all to be controlled by a single finger.  I made videos viewable on its repository so you can quickly get an idea of what the app is about.  Just follow the "learn more" link on any project.</p>
@@ -130,21 +114,21 @@
       </article>
 
       <article id="project-3-lrg">
-        <img id="image-main" src="images/project-pic-cap1.png" alt=""/>
-
+        <img id="image-main" src="images/project-pic-cap1-500xw.png" alt=""/>
         <div class="project-desc">
           <h3>Java - Transportation Dashboard - Capstone Project</h3>
           <p>Metropolitan transportation seemed to be the perfect target for an upgrade in how the operating companies or goverments display, track, and change transit data, and I definitely took a big bite out of it. This project was my capstone for my software development degree, and I couldn't be more happier with how it turned out. The project features a dashboard to view relevant data realtime and to analyze relationships that are important to these operators and data analysts.  I highly recommend to check out my work, the project has full demos in it's repository and is quite simple to download and run. </p>
           <a href="https://github.com/NicholasKoldys/metro-area-transit-status-observer" >Learn More >></a>
           <div class="image-selection">
-            <img src="images/project-pic-cap2.png" alt=""/>
-            <img src="images/project-pic-cap3.png" alt=""/>
+            <img src="images/project-pic-cap2-500xw.png" alt=""/>
+            <img src="images/project-pic-cap3-500xw.png" alt=""/>
+            <!-- <img src="images/project-pic-cap4-500xw.png" alt=""/> -->
           </div>
         </div>
       </article>
 
       <article id="project-4-sm">
-        <img src="images/project-pic-ux1.png" alt=""/>
+        <img src="images/project-pic-ux1-500xw.png" alt=""/>
         <div class="project-desc">
           <h3>Web/UX - User Experience Design Project</h3>
           <p>The website shown is a functioning website built without templates, and tailored to a select few of users. The project was to introduce UX design principles and methods of communicating during the software development lifecycle. I thouroughly enjoyed speaking with the individuals I worked with and ended up delivering an end product they found comfortable and easy to use. <a href="https://nicholaskoldys.github.io/uxdesign-web-development-process-project/">(Website) https://nicholaskoldys.github.io/uxdesign-web-development-process-project</a></p>
@@ -153,50 +137,12 @@
       </article>
 
       <article id="project-5-sm">
-        <img src="images/project-pic-sch1.png" alt=""/>
+        <img src="images/project-pic-sch1-500xw.png" alt=""/>
         <div class="project-desc">
           <h3>Java - Multi-User Scheduling</h3>
           <p>Global Multi-user applications are common among companies that communicate with multiple countries in a supply chain. Using my skills I completed a working calendar - like scheduler - that allows multiple users to actively utilize data from others synchronously. If you are interested in how I approached this project, I highly recommend visiting my github and running the application.</p>
           <a href="https://github.com/NicholasKoldys/multiuser-scheduler" >Learn More >></a>
         </div>
-      </article>
-
-      <article id="project-dyn">
-
-        <button id="project-right-btn"></button>
-
-        <div id="project-viewer">
-          <div id="project-images">
-
-            <div id="image-stack-1">
-              <img src="images/project-pic-and1.png" alt=""/>
-              <img src="images/project-pic-cap1.png" alt=""/>
-            </div>
-
-            <div id="project-main-image-holder">
-              <!-- * These images need to be duplicates of the image-stack's images, as it allows smaller screens to review those images. -->
-              <img src="images/project-pic-cap2.png" alt=""/>
-              <img src="images/project-pic-cap3.png" alt=""/><!-- * This is the focused image with image-stacks shown -->
-              <img src="images/project-pic-inv1.png" alt=""/>
-              <img src="images/project-pic-sch1.png" alt=""/>
-              <img src="images/project-pic-ux1.png" alt=""/>
-            </div>
-
-            <div id="image-stack-2">
-              <img src="images/project-pic-cap1.png" alt=""/>
-              <img src="images/project-pic-cap2.png" alt=""/>
-            </div>
-
-          </div>
-
-          <div class="project-desc">
-            <h3 id="project-name">Project-name</h3>
-            <p id="project-desc">Project-desc</p>
-          </div>
-
-        </div>
-
-        <button id="project-right-btn"></button>
       </article>
     </section>
 
@@ -223,9 +169,12 @@
 
     <section id="section-4">
       <article id="resume">
-        <h1 id="resume-title">Resume</br>Of</br>Nicholas Koldys</h1>
+
+        <h1 id="resume-title">Resume</br><!-- Of</br> -->Nicholas Koldys</h1>
+        
         <div id="resume-contact">
           <h2>Contact</h2>
+          <div id="contact-links">
             <a target="_blank"  href="https://www.linkedin.com/in/nicholas-koldys-b12b2ab0" aria-label="Nicholas Koldys' Linked In Profile">
               <svg id="li-logo"
                 xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -269,6 +218,7 @@
               </svg>
             </a> |
             <a href="#section-3" aria-label="Send Nicholas' a Message" title="Send a Message">Email</a>
+          </div>
         </div>
         
         <div id="resume-obj">
@@ -333,13 +283,14 @@
               <li><a href="">ITIL Project Management</a></li>
               <li><a href="">Comptia Project+</a></li>
               <li><a href="">Comptia A+</a></li>
+              <li><a href="https://www.linkedin.com/in/nicholas-koldys-b12b2ab0">Please visit LinkedIn for all of my Certifications : https://www.linkedin.com/in/nicholas-koldys</a></li>
             </ul>
           </div>
           <div id="resume-skills">
             <h3>Skills</h3>
             <ul>
-              <li><a>Javascript</a></li>
-              <li><a>Node.js</a></li>
+              <li><a>Javascript (frontend/backend)</a></li>
+              <li><a>Node.js (backend)</a></li>
               <li><a>HTML/CSS</a></li>
               <li><a>Java</a></li>
               <li><a>C++</a></li>
@@ -350,23 +301,23 @@
           <div id="resume-projects">
             <h3>Projects</h3>
             <ul>
-              <li><a href="">Transport Logging App (Java)</a></li>
-              <li><a href="">School Schedule/Note App (Android/Java)</a></li>
+              <li><a href="https://github.com/NicholasKoldys/metro-area-transit-status-observer">Transport Logging App (Java)</a></li>
+              <li><a href="https://github.com/NicholasKoldys/class-progress-tracker">School Schedule/Note App (Android/Java)</a></li>
               <li><a href="">Nicholaskoldys.Dev (HTML/CSS/JS)</a></li>
-              <li><a href="">Check out more projects/work : https://github.com/NicholasKoldys</a></li>
+              <li><a href="https://github.com/NicholasKoldys">Check out more projects/work : https://github.com/NicholasKoldys</a></li>
             </ul>
           </div>
         </div>
       </article>
     </section>
 
-    <aside id="accessibility-scroll">
+   <!--<aside id="accessibility-scroll">
       <div></div>
-    </aside>
+    </aside> -->
 
   </main>
 
-  <div id="right-rail"></div>
+  <!-- <div id="right-rail"></div> -->
 
   <!-- ! Remove when complete -->
   <!-- <div id="printf"></div> -->
