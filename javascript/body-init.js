@@ -36,12 +36,13 @@ function applyInitToDoc() {
     }
 }
 
-function applyDynamicStyle() {
+// TODO Temp Removal
+/* function applyDynamicStyle() {
     isCSSLoaded().then( (result) => {
         applyDynStyle( result, timeline, sections, sectionTitles );
         window.requestAnimationFrame( stepAnimationFrame );
     });
-}
+} */
 
 {
     applyInitToDoc();

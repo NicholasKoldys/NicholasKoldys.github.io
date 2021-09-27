@@ -12,3 +12,9 @@ menuBtn.onclick = function () {
         menuList.style.backgroundColor = "#302f2f";
     }
 };
+
+menuList.onmouseleave = function () {
+    menuBtn.classList.remove("showContent");
+        menuList.style.display = "none";
+        menuList.style.backgroundColor = "#302f2f";
+};
