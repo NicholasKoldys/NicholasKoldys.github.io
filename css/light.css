@@ -112,6 +112,11 @@ header > a#home-link {
     justify-content: center;
     align-content: center;
     margin-left: 1ch;
+    transition: all .2s linear;
+}
+
+header > a#home-link:hover {
+    background-color: var(--tertiary-dark);
 }
 
 a#home-link > img#logo {
@@ -141,20 +146,30 @@ nav.crumbs > ul#crumb-list {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    height: 100%;
 }
 nav.crumbs > ul#crumb-list > li {
-    display: flex;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    height: 100%;
 }
 nav.crumbs > ul#crumb-list > li > a {
-    display: block;
     font-family: inherit;
     font-style: inherit;
     font-size: 100%;
-    text-decoration: none;
     font-weight: 900;
+    text-decoration: none;
     color: inherit;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     width: 100%;
-    padding: 1ch 2ch;
+    padding: 0 2ch;
     transition: all .2s linear;
 }
 nav.crumbs > ul#crumb-list > li > a::after {
@@ -163,7 +178,6 @@ nav.crumbs > ul#crumb-list > li > a::after {
 nav.crumbs > ul#crumb-list > li > a:hover {
     color: white;
     cursor: pointer;
-    /* text-shadow: 3px 3px var(--react-dark); */
     background-color: var(--tertiary-dark);
 }
 nav.crumbs > ul#crumb-list > li > a:visited {
@@ -179,13 +193,20 @@ nav.menu {
 }
 
 nav.menu > button#burger-menu {
+    height: 100%;
+    padding: 0 4ch;
     border: none;
     cursor: pointer;
     background-color: transparent;
+    transition: all .2s linear;
+}
+
+nav.menu > button#burger-menu:hover {
+    background-color: var(--tertiary-dark);
 }
 
 nav.menu > button#burger-menu:hover > svg#burger-icon {
-    fill: var(--react-dark);
+    fill: var(--primary-dark);
 }
 
 nav.menu > button#burger-menu > svg#burger-icon {
