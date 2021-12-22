@@ -31,5 +31,3 @@ function fixedContainerDimensions(element) {
 
     return dimensions;
 }
-  
-  

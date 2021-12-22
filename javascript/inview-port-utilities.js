@@ -1,7 +1,7 @@
 /**
  * 
  */
- const ScrollDirection = {
+const ScrollDirection = {
   DOWN: 0,
   UP: 1,
   INVIEW: 2
