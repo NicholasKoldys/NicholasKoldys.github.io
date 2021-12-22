@@ -36,7 +36,8 @@
   <header id="header">
     <!-- Header describes the Head Information for the Body of the document and is site wide -->
     <a id="home-link" class="logo" href="index.html" aria-label="Go to Nicholas Koldys .dev">
-      <div id="logo-box"><img src="images/nk-no-back-300x300.png" alt=""/></div>
+      <img id="logo" src="images/nk-no-back-300x300.png" alt=""/>
+      <!-- <div id="logo-box"></div> -->
     </a>
 
     <nav class="crumbs">
@@ -98,7 +99,7 @@
           <h1>Nicholas Koldys</h1>
           <!-- Main Image / Artistic Headshot  -->
           <div id="eye-candy-1">
-            <img src="images/profile-pic-me1-artsy-400x400.png" alt="Picture of me in Vietnam, wearing a really nice fitting suit."/>
+            <img src="images/headshot-blk-bdr.png" alt="Picture of me in Vietnam, wearing a really nice fitting suit."/>
           </div>
         </div>
         <h2>Web | App | Software Developer</h2>
@@ -107,8 +108,54 @@
     </section>
 
     <section id="section-2">
-      <article id="project-1-sm">
-        <img src="images/project-pic-inv1-500xw.png" alt=""/>
+      <article id="project-1-lrg" class="project">
+        <img class="project-img" src="images/web-nodejs-01.png" alt=""/>
+        <div class="image-selection">
+          <img src="images/web-nodejs-02.png" alt=""/>
+          <img src="images/web-nodejs-03.png" alt=""/>
+          <!-- <img src="images/project-pic-cap4-500xw.png" alt=""/> -->
+        </div>
+        <div class="project-desc">
+          <h3>Web / Node.JS - Comment-Stack Message Board</h3>
+          <p>The famous "Reddit" made comment message boards what they are today.  This website is an attempt at recreating their famous cascading comment section that you see on every post.  Mainly, this project is an experiment with Node.JS backend, Postgres database, and an NGINX proxy server, all containerzed through Docker.  It is a functioning website built without templates, and purely vanilla with the exception of a few required libraries. I thoroughly enjoyed working in this environment and plan to expand my knowledge of it into the future.  Feel free to visit the site and make a post! <a href="https://comment-stack-board.nicholaskoldys.dev/">(Website) https://comment-stack-board.nicholaskoldys.dev/</a></p>
+          <a href="https://github.com/NicholasKoldys/comment-stack-board">Learn More >></a>
+        </div>
+      </article>
+
+      <article id="project-2-sm" class="project">
+        <img class="project-img" src="images/project-pic-and1-500x500.png" alt=""/>
+        <div class="project-desc">
+          <h3>Android - Class Tracker / Reminder / Notetaking App</h3>
+          <p>Mobile, web, and native apps are the forefront of users expectations and I built one! It may be a simple note taking app but I enjoyed mapping out the application from the ground up, recieving the satisfying "dings" from notifications, and allowing it all to be controlled by a single finger.  I made videos viewable on its repository so you can quickly get an idea of what the app is about.  Just follow the "learn more" link on any project.</p>
+          <a href="https://github.com/NicholasKoldys/class-progress-tracker" >Learn More >></a>
+        </div>
+      </article>
+
+      <article id="project-3-lrg" class="project">
+        <img class="project-img" src="images/java-matso-02.png" alt=""/>
+        <div class="image-selection">
+          <img src="images/java-matso-01.png" alt=""/>
+          <img src="images/java-matso-04.png" alt=""/>
+          <!-- <img src="images/project-pic-cap4-500xw.png" alt=""/> -->
+        </div>
+        <div class="project-desc">
+          <h3>Java - Transportation Dashboard - Capstone Project</h3>
+          <p>Metropolitan transportation seemed to be the perfect target for an upgrade in how the operating companies or goverments display, track, and change transit data, and I definitely took a big bite out of it. This project was my capstone for my software development degree, and I couldn't be more happier with how it turned out. The project features a dashboard to view relevant data realtime and to analyze relationships that are important to these operators and data analysts.  I highly recommend to check out my work, the project has full demos in it's repository and is quite simple to download and run. </p>
+          <a href="https://github.com/NicholasKoldys/metro-area-transit-status-observer" >Learn More >></a>
+        </div>
+      </article>
+
+      <!-- <article id="project-4-sm">
+        <img class="project-img" src="images/project-pic-ux1-500xw.png" alt=""/>
+        <div class="project-desc">
+          <h3>Web/UX - User Experience Design Project</h3>
+          <p>The website shown is a functioning website built without templates, and tailored to a select few of users. The project was to introduce UX design principles and methods of communicating during the software development lifecycle. I thouroughly enjoyed speaking with the individuals I worked with and ended up delivering an end product they found comfortable and easy to use. <a href="https://nicholaskoldys.github.io/uxdesign-web-development-process-project/">(Website) https://nicholaskoldys.github.io/uxdesign-web-development-process-project</a></p>
+          <a href="https://github.com/NicholasKoldys/uxdesign-web-development-process-project" >Learn More >></a>
+        </div>
+      </article> -->
+
+      <article id="project-4-sm" class="project">
+        <img class="project-img" src="images/project-pic-inv1-500xw.png" alt=""/>
         <div class="project-desc">
           <h3>Java - Inventory Management System</h3>
           <p>Controlling data by creating, reading, updating, and deleting it, is the bread, butter, and soul of software developers. This software project is my take from the graphical user interface to the database, on how these applications should be set up. Please feel free to view my code and view the demo of this project by following the "learn more" link.</p>
@@ -116,43 +163,17 @@
         </div>
       </article>
 
-      <article id="project-2-sm">
-        <img src="images/project-pic-and1-500x500.png" alt=""/>
-        <div class="project-desc">
-          <h3>Android - Class Tracker/Reminder/Notetaking App</h3>
-          <p>Mobile, web, and native apps are the forefront of users expectations and I built one! It may be a simple note taking app but I enjoyed mapping out the application from the ground up, recieving the satisfying "dings" from notifications, and allowing it all to be controlled by a single finger.  I made videos viewable on its repository so you can quickly get an idea of what the app is about.  Just follow the "learn more" link on any project.</p>
-          <a href="https://github.com/NicholasKoldys/class-progress-tracker" >Learn More >></a>
+      <article id="project-5-sm" class="project">
+        <img class="project-img" src="images/java-scheduler-01.png" alt=""/>
+        <div class="image-selection">
+          <img src="images/java-scheduler-02.png" alt=""/>
+          <img src="images/java-scheduler-03.png" alt=""/>
+          <!-- <img src="images/project-pic-cap4-500xw.png" alt=""/> -->
         </div>
-      </article>
-
-      <article id="project-3-lrg">
-        <img id="image-main" src="images/project-pic-cap1-500xw.png" alt=""/>
-        <div class="project-desc">
-          <h3>Java - Transportation Dashboard - Capstone Project</h3>
-          <p>Metropolitan transportation seemed to be the perfect target for an upgrade in how the operating companies or goverments display, track, and change transit data, and I definitely took a big bite out of it. This project was my capstone for my software development degree, and I couldn't be more happier with how it turned out. The project features a dashboard to view relevant data realtime and to analyze relationships that are important to these operators and data analysts.  I highly recommend to check out my work, the project has full demos in it's repository and is quite simple to download and run. </p>
-          <a href="https://github.com/NicholasKoldys/metro-area-transit-status-observer" >Learn More >></a>
-          <div class="image-selection">
-            <img src="images/project-pic-cap2-500xw.png" alt=""/>
-            <img src="images/project-pic-cap3-500xw.png" alt=""/>
-            <!-- <img src="images/project-pic-cap4-500xw.png" alt=""/> -->
-          </div>
-        </div>
-      </article>
-
-      <article id="project-4-sm">
-        <img src="images/project-pic-ux1-500xw.png" alt=""/>
-        <div class="project-desc">
-          <h3>Web/UX - User Experience Design Project</h3>
-          <p>The website shown is a functioning website built without templates, and tailored to a select few of users. The project was to introduce UX design principles and methods of communicating during the software development lifecycle. I thouroughly enjoyed speaking with the individuals I worked with and ended up delivering an end product they found comfortable and easy to use. <a href="https://nicholaskoldys.github.io/uxdesign-web-development-process-project/">(Website) https://nicholaskoldys.github.io/uxdesign-web-development-process-project</a></p>
-          <a href="https://github.com/NicholasKoldys/uxdesign-web-development-process-project" >Learn More >></a>
-        </div>
-      </article>
-
-      <article id="project-5-sm">
-        <img src="images/project-pic-sch1-500xw.png" alt=""/>
         <div class="project-desc">
           <h3>Java - Multi-User Scheduling</h3>
-          <p>Global Multi-user applications are common among companies that communicate with multiple countries in a supply chain. Using my skills I completed a working calendar - like scheduler - that allows multiple users to actively utilize data from others synchronously. If you are interested in how I approached this project, I highly recommend visiting my github and running the application.</p>
+          <p>Global Multi-user applications are common among 
+              companies that communicate with multiple countries in a supply chain. This project contains a dynamic calendar - like scheduler - that allows multiple users to actively utilize data from others synchronously. If you are interested in how I approached this project, I highly recommend visiting my github and running the application.</p>
           <a href="https://github.com/NicholasKoldys/multiuser-scheduler" >Learn More >></a>
         </div>
       </article>
@@ -307,7 +328,6 @@
               <li><a class="breathing">Node.js (backend)</a></li>
               <li><a class="breathing">HTML/CSS</a></li>
               <li><a class="breathing">Java</a></li>
-              <li><a class="breathing">C++</a></li>
               <li><a class="breathing">SQL</a></li>
               <li><a class="breathing">Comp. Server/Networking</a></li>
             </ul>
@@ -315,6 +335,7 @@
           <div id="resume-projects">
             <h3>Projects</h3>
             <ul>
+              <li><a href="https://github.com/NicholasKoldys/comment-stack-board" class="breathing">Comment Board (NodeJS/Web)</a> - <a href="https://comment-stack-board.NicholasKoldys.dev">https://comment-stack-board.NicholasKoldys.dev</a></li>
               <li><a href="https://github.com/NicholasKoldys/metro-area-transit-status-observer" class="breathing">Transport Logging App (Java)</a></li>
               <li><a href="https://github.com/NicholasKoldys/class-progress-tracker" class="breathing">School Schedule/Note App (Android/Java)</a></li>
               <li><a href="" class="breathing">Nicholaskoldys.Dev (HTML/CSS/JS)</a></li>
@@ -325,7 +346,7 @@
       </article>
     </section>
 
-   <!--<aside id="accessibility-scroll">
+  <!--<aside id="accessibility-scroll">
       <div></div>
     </aside> -->
 

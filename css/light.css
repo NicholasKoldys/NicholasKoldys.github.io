@@ -95,33 +95,28 @@ p {
 /**----------Global Header
 /**-------------------------------------*/
 
-header { 
+header {
     top: 0;
     z-index: 100;
+    position: fixed;
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     background-color: var(--secondary-dark);
-    height: clamp(4ch, 5vh, 8ch);
+    height: clamp(4ch, 5vh, auto);
     width: 100%;
 }
 
 header > a#home-link {
-    display: block;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
-    width: clamp(5ch, 4vw, 10ch);
     margin-left: 1ch;
 }
 
-header > a#home-link > div#logo-box {
-    display: flex;
-    height: 100%;
-}
-
-header > a#home-link > div#logo-box > img {
-    /* padding: clamp(1%, 2ch, 5%); */
-    /* height: auto;
-    width: 100%; */
+a#home-link > img#logo {
+    padding: 1ch;
+    width: clamp(5ch, 15vw, 12ch);
 }
 
 header > nav > ul {
@@ -168,13 +163,12 @@ nav.crumbs > ul#crumb-list > li > a::after {
 nav.crumbs > ul#crumb-list > li > a:hover {
     color: white;
     cursor: pointer;
-    text-shadow: 3px 3px var(--react-dark);
+    /* text-shadow: 3px 3px var(--react-dark); */
     background-color: var(--tertiary-dark);
 }
 nav.crumbs > ul#crumb-list > li > a:visited {
     color: var(--text-primary);
 }
-
 
 nav.menu {
     display: flex;
@@ -272,6 +266,7 @@ footer > .footer-section {
 .shade-overlay-light {
     opacity: .15;
 }
+
 .shade-overlay-heavy {
     color: var(--primary-dark);
     opacity: 0;
@@ -284,7 +279,12 @@ footer > .footer-section {
 /**-------------------------------------*/
 
 section {
-    background-color:rgba(0, 0, 0, 0.82);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color:rgba(0, 0, 0, 0.82); /* BLACK TRANSLUCENT */
     opacity: 1;
     transition: background-color 1s linear, opacity 1s linear;
     padding: var(--extra-pad);
@@ -296,13 +296,7 @@ section {
 --
 */
 
-section#section-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-section#section-1 > #intro-article {
+section#section-1 > article#intro-article {
     padding: var(--extra-pad);
     flex-grow: 1;
     display: flex;
@@ -311,19 +305,19 @@ section#section-1 > #intro-article {
     justify-content: center;
 }
 
-section#section-1 > #intro-article > #name-main-pic {
+article#intro-article > div#name-main-pic {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-section#section-1 > #intro-article > #name-main-pic > #eye-candy-1 {
+div#name-main-pic > div#eye-candy-1 {
     display: flex;
     justify-content: center;
 }
 
-section#section-1 > #intro-article > #name-main-pic > #eye-candy-1 > img {
+div#eye-candy-1 > img {
     /* border-radius: 50%; */
     /* width: clamp( 40vw, 350px, 50vw ); */
     width: 350px;
@@ -336,11 +330,7 @@ section#section-1 > #intro-article > #name-main-pic > #eye-candy-1 > img {
 --
 */
 
-/* section#section-2 {
-
-} */
-
-section#section-2 > article {
+section#section-2 > article.project {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -350,34 +340,33 @@ section#section-2 > article {
     border: 0.3rem solid black;
 }
 
-section#section-2 > article > img {
+article.project > img.project-img {
     height: auto;
     width: clamp(30vw, 600px, 70vw);
-    padding: clamp(1ch, 10vw, 5ch) 0;
+    padding: clamp(1ch, 1vh, 3ch) 0;
 }
 
-section#section-2 > article > div.project-desc {
-    padding: var(--standard-pad);
-}
-
-div.project-desc > p {
-    height: clamp( 10ex, 20vh, 50ex );
-    width: 100%;
-    overflow: auto;
-}
-
-section#section-2 > article#project-3-lrg > div.project-desc > div.image-selection {
+article.project > div.image-selection {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    
 }
 
-section#section-2 > article#project-3-lrg > div.project-desc > div.image-selection > img {
+div.image-selection > img {
     height: auto;
     width: clamp(25vw, 350px, 30vw);
     padding: clamp(1ch, 5%, 5ch);
+}
+
+article.project > div.project-desc {
+    padding: var(--standard-pad);
+}
+
+div.project-desc > p {
+    height: clamp( 10ex, auto, 50ex );
+    width: 100%;
+    overflow: auto;
 }
 
 /*
@@ -385,12 +374,6 @@ section#section-2 > article#project-3-lrg > div.project-desc > div.image-selecti
 --
 --
 */
-
-section#section-3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 section#section-3 > form {
     display: flex;
@@ -415,10 +398,10 @@ section#section-3 > form > :is(input, select, textarea, button) {
     /* border: 1px solid #ccc; */
     border-radius: 1ch;
 }
-section#section-3 > form > label > b {
+section#section-3 > form > label > b { /* BOLD Form Star/Astrisk */
     color: red;
 }
-  
+
 section#section-3 > form > button[type=submit] {
     display: block;
     font-weight: 900;
@@ -441,10 +424,6 @@ section#section-3 > form > button[type=submit]:hover {
 --
 --
 */
-
-section#section-4 {
-    height: auto;
-}
 
 section#section-4 > article#resume {
     /* width: clamp(50ch, 100%, 100ch); */
