@@ -1,56 +1,34 @@
-# NicholasKoldys.github.io'
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Getting Started
 
-## Commit Message Guidelines
+First, run the development server:
 
-The following are preferred guidelines that must be attempted when formatting commit messages.  Commit messages are very important to the integrity of the repository and incorrectly formatted messages should be actively corrected.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-1. **Clear** and **Concise** Summary and Description
-    - summary or title is to be considered a summarized label for the group of changes/additions.
-    - description or body of the message is to be descriptive and list the changes/additions.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-    1. **Summary** - outlines what is discussed.
-        - Bad: "[html] Fix typos"
-        - Good: "[html] Fix typos in main body article-2"
-        - Note: Keep under 50 characters.
-    2. **Description** - describes commit in further detail.
-        - Bad: "Admin sign-in button state false to true."
-        - Good: "When admin access screen launched, sign in button is greyed out and 
-                un-accessible.  The Sign-in button is set to false in loadTextField().
-                Setting sign-in button to true fixes the issue."
-        - Tip: Repeat the steps taken or reiterate the issue.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-2. **Avoid Non-Permanent Summary and Descriptions**
-    - Bad: "[css] Add div-id1, _Please review changes_ -_Nick_"
-    - Bad: "[js] Add filterFunction() param, _fixes OCT.10th update_"
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-3. **Present Tense Only**
-    - Bad: "[html] Moved h1-pageHeader"
-    - Good: "[html] Update h1-pageHeader to line-26"
-    - Tip: Remember the messages explain a group of related changes and must be able to exist individualy if other commits are rolled back.
+## Learn More
 
-4. **Bug Fixes Require Label and Number**
-    - _ex._ bugfix:00001 title summary
+To learn more about Next.js, take a look at the following resources:
 
-5. **Prefer Atomic Commits**
-    - avoid large commits that cannot be grouped easily or are spread across multiple files or file-types.
-    - attempt to only commit incremental and small changes for easier rollbacks.
-    - if possible, break-up large commits into smaller commit groups that can be easily explained, summarized, and described.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-6. **Prefer Multi-Line Commit Messages**
-    - always attempt to use a summary and description message model.
-    - if commits are better said in a few words _6 or less_ only use summary.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-7. **Prefer Tag with Filetype**
-    - if a single file-type is corrected/added, in the summary list the file-type in [ ].
-    - _ex._ [js] [html] [css] [txt] [json]
+## Deploy on Vercel
 
-8. **Avoid Jargon, Acronyms, and Time-Critical/Sensitive**
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-
-## Useful Git
-
-- git commit -m "Subject" -m "Description..."
-
-- git status
-    - quick way to see current branch, changes, un/tracked files.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
