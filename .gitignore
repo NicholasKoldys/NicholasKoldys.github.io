@@ -1,2 +1,9 @@
-.old
-.private
+# Ignore All
+/*
+
+# Allow
+!.gitignore
+!public/
+!README.md
+!LICENSE.md
+!privacy-policy.txt
