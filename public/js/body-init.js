@@ -1,10 +1,13 @@
-function init() {
-    applyDynamicStyle();
+import { applyDynStyle } from "./animation.js";
+import { setupDynamicLinkMenu } from "./dynamic-content.js";
+
+export function init() {
+    // applyDynamicStyle();
     console.log("Initialized Body Script");
 }
 
 /** @return {Promise} isCSSLoaded */
-async function isCSSLoaded() {
+export async function isCSSLoaded() {
     let isCSSLoaded = new Promise( (resolve, reject) => {
         let count = 0;
         let intervalId = setInterval(

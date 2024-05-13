@@ -124,10 +124,10 @@ a {
 
 main {
   margin: auto;
-  border: solid 1px red;
-  width: 40em;
-  height: 120ch;
-  background: blue;
+  /* border: solid 1px red; */
+  /* width: 40em; */
+  /* height: 120ch; */
+  /* background: blue; */
 }
 
 nav {

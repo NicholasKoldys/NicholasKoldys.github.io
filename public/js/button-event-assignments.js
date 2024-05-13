@@ -1,4 +1,5 @@
 /* const menuList = document.getElementById("menu-list"); */
+import { menuList, menuBtn } from "./enivronment-variables.js";
 
 menuBtn.onclick = function () {
     if(!menuBtn.classList.contains("showContent")) {
@@ -8,8 +9,8 @@ menuBtn.onclick = function () {
         menuList.style.backgroundColor = "#242324";
     } else {
         menuBtn.classList.remove("showContent");
-        menuList.style.display = "none";
-        menuList.style.backgroundColor = "#302f2f";
+            menuList.style.display = "none";
+            menuList.style.backgroundColor = "#302f2f";
     }
 };
 

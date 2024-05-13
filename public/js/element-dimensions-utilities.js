@@ -16,7 +16,7 @@ const ElementDimensions = {
  * @param {HTMLElement} element
  * @return {ElementDimensions} listOfDimenstions
  */
-function fixedContainerDimensions(element) {
+export function fixedContainerDimensions(element) {
     let bounds = element.getBoundingClientRect();
 
     // * "{}" is the target, so it passes it.

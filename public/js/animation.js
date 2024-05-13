@@ -1,9 +1,11 @@
+import { sections } from "./enivronment-variables.js";
+import { getELementPageDirection, isInViewPort, isScrollPercentOnElement } from "./inview-port-utilities.js";
 
 /**
  * @description This function is used in the init script to load js after default css styles have been applied.  Call all base append, sizing, and class assignments here. 
  * @param {Boolean} isCSSLoaded true | false
  */
-function applyDynStyle(isCSSLoaded, timeline, sections, sectionTitles) {
+export function applyDynStyle(isCSSLoaded, timeline, sections, sectionTitles) {
   console.log("Applying Dynamic Styles");
   if (isCSSLoaded) {
     setSegmentSNavHeight(timeline, sections);

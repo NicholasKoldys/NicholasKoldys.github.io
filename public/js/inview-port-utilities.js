@@ -8,8 +8,11 @@ const ScrollDirection = {
 }
 
 
-/** @param {HTMLElement} ele @returns {Boolean} is inViewPort */
-function isInViewPort(window, ele) {
+/** 
+ * @param {HTMLElement} ele 
+ * @returns {Boolean} is inViewPort 
+ */
+export function isInViewPort(window, ele) {
   let bound = ele.getBoundingClientRect();
   return (
     (bound.top <= 0 && bound.bottom >= 0)
@@ -18,6 +21,22 @@ function isInViewPort(window, ele) {
   );
 }
 
+/**
+ * @description get the ScrollDirection the element is in.
+ * @param {window} window 
+ * @param {HTMLElement} element 
+ * @returns {ScrollDirection} ScrollDirection.UP | DOWN | INVIEW
+ */
+export function getELementPageDirection(window, element) {
+  if (isScrollPercentOnElement(window, element, ScrollDirection.DOWN, 0) 
+      && isScrollPercentOnElement(window, element, ScrollDirection.UP, 0)) {
+    return ScrollDirection.INVIEW;
+  } else if (!isScrollPercentOnElement(window, element, ScrollDirection.DOWN, 0)) {
+    return ScrollDirection.DOWN;
+  } else if (!isScrollPercentOnElement(window, element, ScrollDirection.UP, 0)) {
+    return ScrollDirection.UP;
+  }
+}
 
 /**
  * @description is the element within the percentage in the scrollDirection.
@@ -27,7 +46,7 @@ function isInViewPort(window, ele) {
  * @param {Number} percentage 0 - 100
  * @returns {Boolean} true | false
  */
-function isScrollPercentOnElement(window, element, scrollDirection, percentage) {
+export function isScrollPercentOnElement(window, element, scrollDirection, percentage) {
   let bound = element.getBoundingClientRect();
 
   // if(element.id == "section-2") printf.innerHTML = "<p>" + "RatioD = " + (( (window.innerHeight - bound.top) / window.innerHeight ) * 100) + " RatioUP = " + (( ( (window.innerHeight + bound.bottom) / window.innerHeight ) * 100 ) - 100) + "</p>";
@@ -50,23 +69,5 @@ function isScrollPercentOnElement(window, element, scrollDirection, percentage) 
     return true;
   } else {
     return false;
-  }
-}
-
-
-/**
- * @description get the ScrollDirection the element is in.
- * @param {window} window 
- * @param {HTMLElement} element 
- * @returns {ScrollDirection} ScrollDirection.UP | DOWN | INVIEW
- */
-function getELementPageDirection(window, element) {
-  if (isScrollPercentOnElement(window, element, ScrollDirection.DOWN, 0) 
-      && isScrollPercentOnElement(window, element, ScrollDirection.UP, 0)) {
-    return ScrollDirection.INVIEW;
-  } else if (!isScrollPercentOnElement(window, element, ScrollDirection.DOWN, 0)) {
-    return ScrollDirection.DOWN;
-  } else if (!isScrollPercentOnElement(window, element, ScrollDirection.UP, 0)) {
-    return ScrollDirection.UP;
   }
 }
