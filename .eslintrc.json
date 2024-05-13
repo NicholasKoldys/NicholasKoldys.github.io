@@ -13,7 +13,6 @@
         "browser": true,
         "node": true,
         "es2021": true,
-        "jasmine": true
     },
     "rules": {
         "no-console": 1

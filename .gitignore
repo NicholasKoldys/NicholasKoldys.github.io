@@ -1,87 +1,15 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# IGNORE ALL
+*/**/*
+*.*
 
-# Dependency directories
-node_modules/
-jspm_packages/
-/.pnp
-.pnp.js
+# ALLOW
+!build/**/*
+!public/**/*
+!src/**/*
+!utils/**/*
 
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# environment variables file
-.env
-.env.test
-# local env files
-.env*.local
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-
-# Diagnostic reports (https://nodejs.org/api/report.html)
-report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# node-waf configuration
-.lock-wscript
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Output of 'npm pack'
-*.tgz
-
-# Stores VSCode versions used for testing VSCode extensions
-.vscode-test
-.vscode
-
-# Environment
-.DS_Store
-
-# Project Specific
-*.old
-*.png
-*.err
-*copy.*
-*db.json
-.backup/
-
-# Information hiding - Remove Non-Dev Dependencies
-*.txt
-dist/
+!.gitignore
+!package.json
+!LICENSE.md
+!privacy-policy.txt
+!README.md
