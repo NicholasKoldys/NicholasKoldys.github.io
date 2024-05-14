@@ -1,19 +1,31 @@
-import { merge } from "webpack-merge";
-// import { nodeExternals } from 'webpack-node-externals';
+// import { merge } from "webpack-merge";
+import path from 'node:path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'css-minimizer-webpack-plugin';
+import { EsbuildPlugin } from 'esbuild-loader';
 import { commonConfig } from "./webpack.base.config.js";
 
-export default merge( commonConfig, {
+process.env.NODE_ENV = 'development'
+
+export default  /* merge( commonConfig, { */
+{ 
+    ...commonConfig, 
     mode: "development",
     // devtool: "inline-source-map",
     devtool: "eval-source-map", // ? Allows accurate debugging with source code in browser
 
-    // entry: {
-    //     vendor:["vue","vuex","./web/common/js/adapt",entryPath,'webpack/hot/dev-server'],
-    //     login:["./web/basic/login/login.js",entryPath,'webpack/hot/dev-server'],
-    //     index:["./web/console/index.js",entryPath,'webpack/hot/dev-server'],
-    //     read:["./web/console/read/read.js",entryPath,'webpack/hot/dev-server'],
-    // },
-    
+    entry: {
+        main: path.resolve("src/index.js"),
+        // vendor:["vue","vuex","./web/common/js/adapt",entryPath,'webpack/hot/dev-server'],
+    },
+
+/*     module: {
+        rules: [
+            ...commonConfig.module.rules,
+            
+        ]
+    } */
+
     // plugins: [
     //     new webpack.ProvidePlugin({
     //         Vue:"vue",
@@ -78,7 +90,6 @@ export default merge( commonConfig, {
     //     modules: [path.resolve(__dirname, 'node_modules')],
     // },
 
-    // target: 'node', // use require() & use NodeJs CommonJS style
     // externals: [nodeExternals()],
     
     // devServer: {
@@ -121,4 +132,4 @@ export default merge( commonConfig, {
             }
         } */
     // }
-});
+};

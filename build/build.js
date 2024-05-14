@@ -1,9 +1,7 @@
 /* eslint-disable no-console */
 import webpack from 'webpack';
-import webpackConfig from './webpack.config.prod.js';
+import webpackConfig from './webpack.prod.config.js';
 import { logg } from '../utils/logger.js';
-
-process.env.NODE_ENV = 'production';
 
 webpack(webpackConfig).run((err, stats) => {
     if (err) {
@@ -17,7 +15,7 @@ webpack(webpackConfig).run((err, stats) => {
         return jsonStats.errors.map(error => logg( 1, error ));
     }
 
-    if (jsonStats.hasWarnings) {
+    if(jsonStats.hasWarnings) {
         logg( 2, 'Webpack generated the following warnings: ');
         jsonStats.warnings.map(warning => logg( 2, warning));
     }

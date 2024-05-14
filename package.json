@@ -1,25 +1,29 @@
 {
-  "name": "javascript-development-environment",
+  "name": "nicholas_koldys_dev_profile",
   "version": "1.1.0",
   "author": "Nicholas Koldys",
-  "description": "JavaScript development environment",
+  "description": "NicholasKoldys.DEV developer profile",
   "license": "MIT",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "pnpm run --parallel \"open:src\"",
     "open:src": "node build/devServer.js",
+    "open:dist": "node build/distServer.js",
     "clean:dist": "rimraf ./dist && mkdir dist",
-    "prebuild": "pnpm clean:dist",
-    "build": "node build/build.js",
-    "predevbuild": "pnpm run clear:dist",
-    "devbuild": "pnpm exec webpack build --config ./webpack.config.dev.mjs --stats verbose"
+    "prebuild": "pnpm run --stream --parallel \"clean:dist\"",
+    "build": "pnpm exec webpack build --config ./build/webpack.prod.config.js --stats verbose",
+    "postbuild": "pnpm run --stream --parallel \"open:dist\"",
+    "predevbuild": "pnpm clean:dist",
+    "devbuild": "pnpm exec webpack build --config ./build/webpack.dev.config.js --stats verbose"
   },
   "scriptsComments": {
-    "scripts-comment": ""
+    "scripts-comment": "",
+    "build": "node build/build.js"
   },
   "keywords": [],
   "devDependencies": {
+    "autoprefixer": "^10.4.19",
     "copy-webpack-plugin": "^5.1.2",
     "css-loader": "6.8.1",
     "css-minimizer-webpack-plugin": "^7.0.0",
@@ -33,6 +37,9 @@
     "express": "4.18.2",
     "html-webpack-plugin": "5.5.1",
     "mini-svg-data-uri": "^1.4.4",
+    "postcss": "^8.4.38",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^9.5.13",
     "rimraf": "5.0.1",
     "style-loader": "3.3.3",
     "webpack": "^5.86.0",
