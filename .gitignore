@@ -20,6 +20,7 @@
 !LICENSE.md
 !privacy-policy.txt
 !README.md
+!.nojekyll
 
 # DiSALLOW SPECIFIC
 src/assets/*
