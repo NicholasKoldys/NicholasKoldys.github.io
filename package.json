@@ -12,14 +12,17 @@
     "open:dist": "node build/distServer.js",
     "clean:dist": "rimraf ./dist && mkdir dist",
     "prebuild": "pnpm run --stream --parallel \"clean:dist\"",
-    "build": "pnpm exec webpack build --config ./build/webpack.prod.config.js --stats verbose",
-    "postbuild": "pnpm run --stream --parallel \"open:dist\"",
+    "dist:build": "pnpm exec webpack build --watch --config ./build/webpack.prod.config.js --no-color --stats verbose > webpack.stats.log",
+    "dist:serve": "pnpm run \"open:dist\"",
+    "build": "pnpm run \"/^(dist:).*/\"",
     "predevbuild": "pnpm clean:dist",
-    "devbuild": "pnpm exec webpack build --config ./build/webpack.dev.config.js --stats verbose"
+    "devbuild": "pnpm exec webpack build --config ./build/webpack.dev.config.js --no-color --stats verbose > webpack.devstats.log"
   },
   "scriptsComments": {
     "scripts-comment": "",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "builda": "pnpm exec webpack build --watch --config ./build/webpack.prod.config.js --stats verbose",
+    "postbuild": "pnpm run --stream --parallel \"open:dist\""
   },
   "keywords": [],
   "devDependencies": {
@@ -35,7 +38,9 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-watch": "8.0.0",
     "express": "4.18.2",
+    "html-loader": "^5.0.0",
     "html-webpack-plugin": "5.5.1",
+    "mini-css-extract-plugin": "^2.9.0",
     "mini-svg-data-uri": "^1.4.4",
     "postcss": "^8.4.38",
     "postcss-loader": "^8.1.1",
@@ -51,7 +56,6 @@
   },
   "dependenciesComments": {
     "devDependencies-comment": "",
-    "mini-css-extract-plugin": "^2.7.6",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2"
   }
