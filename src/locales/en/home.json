@@ -1,0 +1,125 @@
+{
+    "landing": {
+        "title": "Nicholas Koldys",
+        "pitch": "Web | App | Software Developer",
+        "summary": "I am an aspiring developer focused on design, creation, and delivery of experiences through websites, applications, and collaborations of all sorts.  This site is a Portfolio of projects.  Please feel free to explore and contact me.", 
+        "more": " Learn more >", 
+        "morePath": "#section-4"
+    }, 
+    "alts" : {
+        "headshot": ""
+    }, 
+    "projects": {
+        "comment" : "This section is not a list as I want to have an archive of what I used to show.",
+        "matso" : {
+            "title" : "Java - Transportation Dashboard - Capstone Project",
+            "description" : "Metropolitan transportation seemed to be the perfect target for an upgrade in how the operating companies or goverments display, track, and change transit data, and I definitely took a big bite out of it. This project was my capstone for my software development degree, and I couldn't be more happier with how it turned out. The project features a dashboard to view relevant data realtime and to analyze relationships that are important to these operators and data analysts.  I highly recommend to check out my work, the project has full demos in it's repository and is quite simple to download and run. ", 
+            "gitPath" : "https://github.com/NicholasKoldys/metro-area-transit-status-observer",
+            "website" : ""
+        }, 
+        "collegeApp" : {
+            "title" : "Android - Class Tracker / Reminder / Notetaking App",
+            "description" : "Mobile, web, and native apps are the forefront of users expectations and I built one! It may be a simple note taking app but I enjoyed mapping out the application from the ground up, recieving the satisfying \"dings\" from notifications, and allowing it all to be controlled by a single finger.  I made videos viewable on its repository so you can quickly get an idea of what the app is about.  Just follow the \"learn more\" link on any project.", 
+            "gitPath" : "https://github.com/NicholasKoldys/class-progress-tracker",
+            "website" : ""
+        }, 
+        "inventoryManagementSystem" : {
+            "title" : "Java - Inventory Management System<",
+            "description" : "Controlling data by creating, reading, updating, and deleting it, is the bread, butter, and soul of software developers. This software project is my take from the graphical user interface to the database, on how these applications should be set up. Please feel free to view my code and view the demo of this project by following the \"learn more\" link.", 
+            "gitPath" : "https://github.com/NicholasKoldys/inventory-management-system",
+            "website" : ""
+        }, 
+        "scheduler" : {
+            "title" : "Java - Multi-User Scheduling",
+            "description" : "Global Multi-user applications are common among companies that communicate with multiple countries in a supply chain. This project contains a dynamic calendar - like scheduler - that allows multiple users to actively utilize data from others synchronously. If you are interested in how I approached this project, I highly recommend visiting my github and running the application.", 
+            "gitPath" : "https://github.com/NicholasKoldys/multiuser-scheduler",
+            "website" : ""
+        }, 
+        "uxProject" : {
+            "title" : "Web/UX - User Experience Design Project",
+            "description" : "The website shown is a functioning website built without templates, and tailored to a select few of users. The project was to introduce UX design principles and methods of communicating during the software development lifecycle. I thouroughly enjoyed speaking with the individuals I worked with and ended up delivering an end product they found comfortable and easy to use. ", 
+            "gitPath" : "https://nicholaskoldys.github.io/uxdesign-web-development-process-project/",
+            "website" : "https://nicholaskoldys.github.io/uxdesign-web-development-process-project"
+        }, 
+        "redditClone" : {
+            "title" : "Web / Node.JS - Comment-Stack Message Board",
+            "description" : "The famous \"Reddit\" made comment message boards what they are today.  This website is an attempt at recreating their famous cascading comment section that you see on every post.  Mainly, this project is an experiment with Node.JS backend, Postgres database, and an NGINX proxy server, all containerzed through Docker.  It is a functioning website built without templates, and purely vanilla with the exception of a few required libraries. I thoroughly enjoyed working in this environment and plan to expand my knowledge of it into the future.  Feel free to visit the site and make a post! ", 
+            "gitPath" : "https://comment-stack-board.nicholaskoldys.dev/",
+            "website" : "https://github.com/NicholasKoldys/comment-stack-board"
+        }
+    },
+    "resume" : {
+        "title": "Resume of</br> Nicholas Koldys",
+        "contactTitle": "Contact",
+        "objectiveTitle": "Career Objective", 
+        "objective": "I am pursuing a career in software development and engineering.  I have a strong background and understanding in the foundational technologies and determination with consistent progression in multiple development languages and tools.  My goal is to become an integral member of an organization that is team oriented and develops meaningful applications for end users.",
+        "educationTitle" : "Education Background",
+        "school1" : "Western Governors University | 2020",
+        "degree1" : "&#9672  <abbr title=\"Bachelor of Science\">B.S.</abbr> in Software Development",
+        "school2" : "Nashville State Community College | 2017",
+        "degree2" : "&#9671  <abbr title=\"Associate of Applied Science\">A.A.S.</abbr> in Computer Networking Techonology",
+        "experienceTitle": "Work Experience",
+        "experienceDescription": "Visit Nicholas' LinkedIn Profile for work history",
+        "experiencePath": "https://www.linkedin.com/in/nkoldys",
+        "experienceAria": "Nicholas Koldys' Linked In Profile",
+        "projectsPath": "https://github.com/NicholasKoldys",
+        "projectseAria": "Nicholas Koldys' Github Repositories",
+        "porfolioPath": "https://github.com/NicholasKoldys",
+        "porfolioeAria": "Send Nicholas' a Message",
+        "messagePath": "/#section-3",
+        "aboutTitle": "About",
+        "certificationsTitle": "Certifications",
+        "certsArr": [
+            "Oracle Database SQL Associate",
+            "CIW User Interface Design",
+            "CIW HTML5 & CSS3",
+            "ITIL Project Management",
+            "Comptia Project+",
+            "Comptia A+"
+        ],
+        "certsInfo": "Please visit LinkedIn for all of my Certifications : https://www.linkedin.com/in/nkoldys",
+        "skillsTitle": "Skills",
+        "skillsArr" : [
+            "Javascript (frontend/backend)",
+            "Node.js (backend)",
+            "HTML/CSS",
+            "Java",
+            "SQL",
+            "Comp. Server/Networking"
+        ],
+        "projectsTitle": "Projects",
+        "projectsArr" : [
+            {
+                "title": "Comment Board (Node./js/Web)",
+                "repo": "https://comment-stack-board.NicholasKoldys.dev"
+            },
+            {
+                "title": "Transport Logging App (Java)",
+                "repo": "https://github.com/NicholasKoldys/metro-area-transit-status-observer"
+            },
+            {
+                "title": "School Schedule/Note App (Android/Java)",
+                "repo": "https://github.com/NicholasKoldys/class-progress-tracker"
+            },
+            {
+                "title": "Nicholaskoldys.Dev (HTML/./style/JS)",
+                "repo": "Your already HERE! https://NicholasKoldys.github.io"
+            }
+        ],
+        "projectsInfo": "Check out more projects/work : https://github.com/NicholasKoldys"
+    },
+    "form": {
+        "name": "Name",
+        "phone": "Phone Number",
+        "email": "Email",
+        "typeTitle": "Type of Message",
+        "types": {
+            "contact": "Contact | Get in Touch",
+            "interest": "Interest | Collaboration",
+            "work": "Job | Work",
+            "other": "Other"
+        },
+        "message": "Your message",
+        "submit": "Send"
+    }
+}
