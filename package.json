@@ -1,0 +1,56 @@
+{
+  "name": "nicholas_koldys_dev_profile",
+  "version": "1.1.0",
+  "author": "Nicholas Koldys",
+  "description": "NicholasKoldys.DEV developer profile",
+  "license": "MIT",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "pnpm run --parallel \"open:src\"",
+    "open:src": "node build/devServer.js",
+    "open:dist": "node build/distServer.js",
+    "clean:dist": "rimraf ./dist && mkdir dist",
+    "prebuild": "pnpm run --stream --parallel \"clean:dist\"",
+    "dist:build": "pnpm exec webpack build --watch --config ./build/webpack.prod.config.js --no-color --stats verbose > webpack.stats.log",
+    "dist:serve": "pnpm run \"open:dist\"",
+    "build": "pnpm run \"/^(dist:).*/\"",
+    "predevbuild": "pnpm run prebuild",
+    "devbuild": "pnpm exec webpack build --config ./build/webpack.dev.config.js --no-color --stats verbose > webpack.devstats.log",
+    "postdevbuild": "pnpm run dist:serve",
+    "analyze": "pnpm exec webpack --analyze"
+  },
+  "scriptsComments": {
+    "scripts-comment": ""
+  },
+  "keywords": [],
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "compression-webpack-plugin": "^11.1.0",
+    "css-loader": "6.8.1",
+    "esbuild-loader": "^4.1.0",
+    "eslint": "^8.42.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^16.0.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-watch": "8.0.0",
+    "express": "4.18.2",
+    "html-loader": "^5.0.0",
+    "html-webpack-plugin": "5.5.1",
+    "mini-css-extract-plugin": "^2.9.0",
+    "postcss": "^8.4.38",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^9.5.13",
+    "rimraf": "5.0.1",
+    "webpack": "^5.86.0",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-middleware": "6.1.1",
+    "workbox-webpack-plugin": "^7.0.0",
+    "workbox-window": "^7.0.0"
+  },
+  "dependenciesComments": {
+    "devDependencies-comment": ""
+  }
+}

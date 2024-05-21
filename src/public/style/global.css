@@ -1,0 +1,210 @@
+:root {
+    --max-width: 1100px;
+    --border-radius: 12px;
+
+    --standard-size: 1rem; /* Custom Properties - creates a variable that can be used throughout css */
+
+    --nav-height: clamp(6ch, 7dvh, 12ch);
+
+    --content-height: clamp(25ex, 90vh, 200ex);
+    --content-width: clamp(20ch, 80vw, 100ch);
+
+    --standard-pad: clamp(2ch, 2vw, 4ch);
+    --extra-pad: clamp(5ch, 4vw, 10ch);
+
+    --content-family: 'Montserrat', Helvetica Arial, Arial, sans-serif;
+    --heading-family: 'Kufam', Helvetica Arial, sans-serif;
+
+    --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    font-family: var(--content-family);
+    color: var(--text-primary); /*Text Color*/
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    padding: 0;
+    min-height: 100dvh;
+    
+    background: radial-gradient(100% 225% at 100% 0%, #FAFF00 0%, #000000 100%), linear-gradient(235deg, #FF7A00 0%, #000000 100%), linear-gradient(20deg, #241E92 0%, #241E92 30%, #5432D3 calc(30% + 1px), #5432D3 35%, #7B6CF6 calc(35% + 1px), #7B6CF6 50%, #E5A5FF calc(50% + 1px), #E5A5FF 100%), linear-gradient(120deg, #110133 0%, #110133 40%, #00918E calc(40% + 1px), #00918E 60%, #4DD599 calc(60% + 1px), #4DD599 70%, #FFDC34 calc(70% + 1px), #FFDC34 100%);
+    background-blend-mode: overlay, hard-light, overlay, normal;
+}
+
+main {
+    min-height: 100dvh;
+
+    margin: 0 auto;
+
+    line-height: calc(1em + 0.5rem);
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--text-primary);
+}
+
+a:hover {
+    color: var(--text-primary);
+}
+
+a[href^="http"]::after {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/d/d9/VisualEditor_-_Icon_-_External-link.svg) no-repeat right;
+    padding-right: 1.2ch;
+}
+
+a[href$=".pdf"] {
+    /* content: " [PDF]"; */
+    background: url(https://upload.wikimedia.org/wikipedia/commons/3/38/Icon_pdf_file.svg) no-repeat right;
+    padding-right: 1.2ch;
+}
+
+a[mailto] {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/4/42/Icon_External_Link_E-Mail.png) no-repeat right;
+    padding-right: 1.2ch;
+}
+
+h1, h2 {
+    font-family: var(--heading-family);
+}
+
+h3, p, pre, a {
+    font-family: var(--content-family);
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+[id] {
+    scroll-margin-top: 7ex;
+}
+
+header {
+    padding-bottom: 1dvh;
+    margin-bottom: var(--nav-height);
+}
+
+/**-----------------------------------
+/**----------Global Footer
+/**-------------------------------------*/
+
+footer {
+    display: flex;
+    flex-direction: row;
+}
+
+footer > nav > ul {
+    list-style-type: none;
+}
+
+footer > .footer-section {
+    margin: .5rem;
+}
+
+/**-----------------------------------
+/**-------Global Overlay JS
+/**-------------------------------------*/
+
+.shade-overlay-light {
+    opacity: .15;
+}
+
+.shade-overlay-heavy {
+    color: var(--primary-dark);
+    opacity: 0;
+}
+
+/**-----------------------------------
+/**---Index - Content Sections
+/**-------------------------------------*/
+
+section {
+    background-color:rgba(0, 0, 0, 0.82); /* BLACK TRANSLUCENT */
+    opacity: 1;
+    transition: background-color 1s linear, opacity 1s linear;
+    padding: var(--extra-pad);
+
+    width: clamp(70ch, 80dvw, 100ch);
+    margin: auto auto;
+}
+
+/**-----------------------------------
+/**------Large Ratio Media Queries
+/**-------------------------------------*/
+
+/* NOTE: This section must fall after changes or it will be overwritten */
+
+@media all {
+
+}
+
+@media screen and (orientation: landscape) {
+
+}
+
+@media screen and (min-width: 30em) and (orientation: landscape) {
+
+}
+
+/* Printers and Print related dispalys */
+@media print {
+    
+}
+
+/* Screen Reading devices */
+@media speech {
+    
+}
+
+/* Non-Print or Non-Speech */
+@media screen {
+    
+}

@@ -1,9 +1,24 @@
-# Ignore All
-/*
+# IGNORE ALL
+*/**/*
+*.*
 
-# Allow
+# ALLOW
+!dist/assets**/*
+!dist/*.gz
+!dist/*.html
+!dist/*.css
+
+!build/**/*
+!public/**/*
+
+!src/**/*
+!utils/**/*
+
 !.gitignore
-!public/
-!README.md
+!package.json
 !LICENSE.md
 !privacy-policy.txt
+!README.md
+
+# DiSALLOW SPECIFIC
+src/assets/*

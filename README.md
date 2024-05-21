@@ -1,3 +1,3 @@
-# NicholasKoldys.github.io
+# NicholasKoldys.github.io -> NicholasKoldys.dev
 
 Personal portfolio website
