@@ -1,4 +1,3 @@
-// ! becareful objects are referenced so clone to copy.
 /**
  * 
  */

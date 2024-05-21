@@ -8,7 +8,8 @@ export function fromHTML(html, trim = true) {
     if (!html) return null;
 
     const template = document.createElement('template');
-    template.innerHTML = html;
+        template.innerHTML = html;
+
     const result = template.content.children;
 
     if (result.length === 1) return result[0];

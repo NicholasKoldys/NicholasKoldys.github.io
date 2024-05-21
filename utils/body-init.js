@@ -1,6 +1,3 @@
-import { applyDynStyle } from "./animation.js";
-import { setupDynamicLinkMenu } from "./dynamic-content.js";
-
 export function init() {
     // applyDynamicStyle();
     console.log("Initialized Body Script");
@@ -33,10 +30,11 @@ export async function isCSSLoaded() {
 }
 
 function applyInitToDoc() {
-    //document.querySelector("body").onload = ...
-    window.onload = function() {
-        init();
-    }
+    init();
+    // window.onload = function() {
+    //     init();
+    // }
+    // apply styles after load
 }
 
 // TODO Temp Removal
@@ -49,5 +47,4 @@ function applyInitToDoc() {
 
 {
     applyInitToDoc();
-    setupDynamicLinkMenu();
 }
