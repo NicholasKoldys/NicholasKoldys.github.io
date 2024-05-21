@@ -5,7 +5,10 @@
 # ALLOW
 !build/**/*
 !public/**/*
+
 !src/**/*
+src/assets/
+
 !utils/**/*
 
 !.gitignore
