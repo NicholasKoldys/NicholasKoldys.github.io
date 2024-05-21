@@ -4,7 +4,8 @@
 
 # ALLOW
 !dist/assets**/*
-!dist/*.gz
+# !dist/*.gz
+!dist/*.js
 !dist/*.html
 !dist/*.css
 
