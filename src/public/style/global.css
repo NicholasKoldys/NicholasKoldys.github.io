@@ -6,11 +6,19 @@
 
     --nav-height: clamp(6ch, 7dvh, 12ch);
 
+    --preferred-content: 80dvw;
+
     --content-height: clamp(25ex, 90vh, 200ex);
-    --content-width: clamp(20ch, 80vw, 100ch);
+    --content-width: clamp(20ch, 100%, 115ch);
+
+    --inner-width: clamp(10ch, 100%, 110ch);
+
+    --mobile-cutoff: 65ch;
 
     --standard-pad: clamp(2ch, 2vw, 4ch);
     --extra-pad: clamp(5ch, 4vw, 10ch);
+
+    --content-spacing: 1dvh;
 
     --content-family: 'Montserrat', Helvetica Arial, Arial, sans-serif;
     --heading-family: 'Kufam', Helvetica Arial, sans-serif;
@@ -18,6 +26,8 @@
     --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+    --section-transition: background-color 1s linear, opacity 1s linear;
 }
 
 *, *::before, *::after {
@@ -50,11 +60,18 @@ body {
 
 main {
     min-height: 100dvh;
+    max-width: 100dvw;
 
     margin: 0 auto;
 
     line-height: calc(1em + 0.5rem);
     -webkit-font-smoothing: antialiased;
+}
+
+header {
+    width: 100%;
+    padding-bottom: var(--content-spacing);
+    margin-bottom: var(--nav-height);
 }
 
 img, picture, video, canvas, svg {
@@ -127,11 +144,6 @@ p {
     scroll-margin-top: 7ex;
 }
 
-header {
-    padding-bottom: 1dvh;
-    margin-bottom: var(--nav-height);
-}
-
 /**-----------------------------------
 /**----------Global Footer
 /**-------------------------------------*/
@@ -139,6 +151,8 @@ header {
 footer {
     display: flex;
     flex-direction: row;
+
+    max-width: 100dvw;
 }
 
 footer > nav > ul {
@@ -146,7 +160,7 @@ footer > nav > ul {
 }
 
 footer > .footer-section {
-    margin: .5rem;
+    margin: .5rem 0;
 }
 
 /**-----------------------------------
@@ -166,14 +180,20 @@ footer > .footer-section {
 /**---Index - Content Sections
 /**-------------------------------------*/
 
-section {
-    background-color:rgba(0, 0, 0, 0.82); /* BLACK TRANSLUCENT */
+section.section {
+    /* background-color: var(--section-shadow);
     opacity: 1;
-    transition: background-color 1s linear, opacity 1s linear;
-    padding: var(--extra-pad);
+    transition: var(--section-transition); */
 
-    width: clamp(70ch, 80dvw, 100ch);
-    margin: auto auto;
+    /* padding: var(--extra-pad); */
+
+    width: var(--content-width);
+    margin: var(--content-spacing) auto;
+
+    @media only screen and (max-width: 65ch) {
+        padding: 0;
+        width: auto;
+    }
 }
 
 /**-----------------------------------

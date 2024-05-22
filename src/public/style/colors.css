@@ -1,5 +1,5 @@
 :root {
-  
+  --section-shadow: rgba(0, 0, 0, 0.82); /* BLACK TRANSLUCENT */
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
