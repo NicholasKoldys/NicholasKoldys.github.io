@@ -16,12 +16,26 @@ export class ProjectCard extends HTMLElement {
 
         this.shadowRoot.innerHTML = /* HTML */`
             <style>
+                :host {
+                    box-sizing: border-box;
+                    display: block;
+                    width: 100%;
+                }
+
                 .project {
+                    box-sizing: border-box;
+
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
 
+                    background-color: var(--section-shadow);
+                    opacity: 1;
+                    transition: var(--section-transition);
+
+                    margin: 0 auto;
+                    width: var(--inner-width);
 
                     margin-bottom: 15ex;
                     padding: 1%;
@@ -31,7 +45,7 @@ export class ProjectCard extends HTMLElement {
                 .project-img {
                     padding: clamp(1ch, 1vh, 3ch) 0;
                     height: auto;
-                    width: clamp(30vw, 600px, 70vw);
+                    width: clamp(30vw, 600px, 100%);
                 }
 
                 .image-selection {
@@ -43,28 +57,39 @@ export class ProjectCard extends HTMLElement {
 
                 .image-selection > img {
                     padding: clamp(1ch, 5%, 5ch);
-                    width: clamp(25vw, 350px, 30vw);
+                    width: clamp(25vw, 350px, 30%);
                 }
 
                 .project-desc {
                     padding: var(--standard-pad);
-                    width: clamp(55ch, 100%, 75ch);
                 }
 
                 .project-desc > p {
                     height: clamp( 10ex, auto, 50ex );
+                    width: 100%;
                     overflow: auto;
+                }
+
+                @media only screen and (max-width: 65ch) {
+                    :host {
+                        width: 100dvw;
+                    }
+
+                    .project {
+                        width: 100dvw;
+                    }
                 }
             </style>
             <article class="project">
+                <slot name="title"></slot>
                 <img class="project-img" src="${this.dataset.mainImageUrl}" alt=""/>
                 <div class="image-selection">
                     ${ imageElements.join("") }
                 </div>
                 <div class="project-desc">
-                    <slot name="title"></slot>
-                    <slot name="description"><slot>
-                    <slot name="more"><slot>
+                    <slot name="description">
+                        <slot name="more"><slot>
+                    <slot>
                 </div>
             </article>
         `;

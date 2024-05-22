@@ -58,6 +58,24 @@ export class ContactForm extends HTMLElement {
                     text-shadow: 3px 3px var(--react-dark);
                     background-color: #265e29;
                 }
+
+                @media only screen and (max-width: 65ch) {
+                    :host {
+                        margin: 0;
+                        padding: 0;
+                        width: 100dvw;
+                    }
+
+                    form {
+                        margin: 0;
+                        padding: 0;
+                        width: 100dvw;
+
+                        .summary {
+                            width: 90%;
+                        }
+                    }
+                }
             </style>
             <form action="https://formspree.io/f/xrgrpbrv" method="POST">  
                 <label for="_name">${ content.form.name }:</label>

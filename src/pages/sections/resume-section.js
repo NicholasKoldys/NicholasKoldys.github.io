@@ -64,7 +64,7 @@ export class InteractiveResume extends HTMLElement {
                 }
 
                 div {
-                    padding: clamp(2ex, 5vh, 10ex) 0;
+                    padding: 5dvh 0;
                 }
 
                 #resume-contact {
@@ -80,51 +80,54 @@ export class InteractiveResume extends HTMLElement {
                     align-items: center;
                     justify-content: space-evenly;
 
+                    height: 10ch;
+                    max-height: 10dvh;
                     width: 100%;
-                    height: clamp(8ex, 8ex, 10dvh);
 
                     a {
+                        display: inline-block;
                         vertical-align: middle;
                         text-align: center;
-                        padding: clamp(1%, 2ex, 2%);
-
+                        
+                        padding: clamp(0%, 2%, 2ex);
                         height: 100%;
-                        width: clamp(5ch, 33%, 33%);
+                        width: clamp(1ch, 30%, 30%);
 
                         svg {
                             box-sizing: border-box;
+                            display: inline-block;
                             height: 100%;
                         }
                     }
-                }
 
-                .linkedInFull {
-                    svg {
-                        width: 100%;
-                        fill: #2766b1;
+                    .linkedInFull {
+                        svg {
+                            width: 100%;
+                            fill: #2766b1;
+                        }
                     }
-                }
-                .linkedInFull:hover {
-                    svg { fill: #6299dc; }
-                }
-                .gitHubFull {
-                    svg { 
-                        width: 100%;
-                        fill: #ffffff; }
-                }
-                .gitHubFull:hover {
-                    svg { fill: #6a00ff; }
-                }
-                .messageEmail {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: space-evenly;
+                    .linkedInFull:hover {
+                        svg { fill: #6299dc; }
+                    }
+                    .gitHubFull {
+                        svg { 
+                            width: 100%;
+                            fill: #ffffff; }
+                    }
+                    .gitHubFull:hover {
+                        svg { fill: #6a00ff; }
+                    }
+                    .messageEmail {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-evenly;
 
-                    svg { fill: #8711d0; }
-                }
-                .messageEmail:hover {
-                    svg { fill: #f201ff; }
+                        svg { fill: #8711d0; }
+                    }
+                    .messageEmail:hover {
+                        svg { fill: #f201ff; }
+                    }
                 }
 
                 #resume-back > ul > li > pre {
@@ -173,78 +176,95 @@ export class InteractiveResume extends HTMLElement {
                     99% { text-decoration: underline var(--text-primary) .5ex ; }
                 }
 
-                @media (min-width: 700px) {
+                @media only screen and (max-width: 65ch) {
+                    :host {
+                        width: 100dvw;
+                    }
+                    #resume {
+                        .part {
+                            margin: auto;
+                            width: 95dvw;
 
+                            div {
+                                width: 100%;
+                                padding: 0;
+                            }
+
+                            ul {
+                                display: block;
+                                width: 100%;
+                                padding: 0;
+                            }
+                        }
+                    }
                 }
-
             </style>
             <article id="resume">
-
-            <h1 id="resume-title">${ content.resume.title }</h1>
-            
-            <div id="resume-contact">
-                <h2>${ content.resume.contactTitle }</h2>
-                <div id="contact-links">
-                    <a class="linkedInFull breathing" target="_blank" href="${ content.resume.experiencePath }" aria-label="${ content.resume.experienceAria }"> ${ lnFull } </a> 
-                    |
-                    <a class="gitHubFull breathing" target="_blank" href="${ content.resume.projectsPath }" aria-label="${ content.resume.projectseAria }" > ${ gitFull } </a> 
-                    |
-                    <a class="messageEmail breathing" href="#section-3" aria-label="${ content.resume.messagePath }" title="Send a Message"> ${ messageIcon } Email</a>
-                </div>
-            </div>
-            
-            <div id="resume-obj">
-                <h2>${ content.resume.objectiveTitle }</h2>
-                <p>${ content.resume.objective }</p>
-            </div>
-    
-            <div id="resume-back">
-                <h2>${ content.resume.educationTitle }</h2>
-                <ul><li><h3>${ content.resume.school1 }</h3><pre>${ content.resume.degree1 }</pre></li>
-                    <li><h3>${ content.resume.school2 }</h3><pre>${ content.resume.degree2 }</pre></li>
-                </ul>
-            </div>
-    
-            <!--◆	9670	25C6	 	BLACK DIAMOND
-                ◇	9671	25C7	 	WHITE DIAMOND
-                ◈	9672	25C8	 	WHITE DIAMOND CONTAINING BLACK SMALL DIAMOND-->
-    
-            <div id="resume-exp">
-                <h2>${ content.resume.experienceTitle }</h2>
-                <ul><li><a class="linkedInSmall breathing" target="_blank"  href="${ content.resume.experiencePath }">
-                            ${ lnSmall} ${ content.resume.experienceDescription }
-                        </a>
-                    </li>
-                </ul>
-            </div>
-    
-            <div id="resume-about">
-                <h2>${ content.resume.aboutTitle }</h2>
+                <h1 id="resume-title">${ content.resume.title }</h1>
                 
-                <div id="resume-cert">
-                    <h3>${ content.resume.certificationsTitle }</h3>
-                    <ul>${ certsArr.join("")
-                            /* content.resume.certsArr.map( str => { return`<li class="breathing">${str} </li>`; }) */
-                        }
-                        <li><a href="${ content.resume.experiencePath }" class="breathing">${ content.resume.certsInfo }</a></li>
+                <div id="resume-contact" class="part">
+                    <h2>${ content.resume.contactTitle }</h2>
+                    <div id="contact-links">
+                        <a class="linkedInFull breathing" target="_blank" href="${ content.resume.experiencePath }" aria-label="${ content.resume.experienceAria }"> ${ lnFull } </a> 
+                        |
+                        <a class="gitHubFull breathing" target="_blank" href="${ content.resume.projectsPath }" aria-label="${ content.resume.projectseAria }" > ${ gitFull } </a> 
+                        |
+                        <a class="messageEmail breathing" href="#section-3" aria-label="${ content.resume.messagePath }" title="Send a Message"> ${ messageIcon } Email</a>
+                    </div>
+                </div>
+                
+                <div id="resume-obj" class="part">
+                    <h2>${ content.resume.objectiveTitle }</h2>
+                    <p>${ content.resume.objective }</p>
+                </div>
+        
+                <div id="resume-back" class="part">
+                    <h2>${ content.resume.educationTitle }</h2>
+                    <ul><li><h3>${ content.resume.school1 }</h3><pre>${ content.resume.degree1 }</pre></li>
+                        <li><h3>${ content.resume.school2 }</h3><pre>${ content.resume.degree2 }</pre></li>
                     </ul>
                 </div>
-                <div id="resume-skills">
-                    <h3>${ content.resume.skillsTitle }</h3>
-                    <ul>${ skillsArr.join("")
-                            /* content.resume.skillsTitle.map( str => { return`<li class="breathing">${str}</li>`; }) */
-                        }
+        
+                <!--◆	9670	25C6	 	BLACK DIAMOND
+                    ◇	9671	25C7	 	WHITE DIAMOND
+                    ◈	9672	25C8	 	WHITE DIAMOND CONTAINING BLACK SMALL DIAMOND-->
+        
+                <div id="resume-exp" class="part">
+                    <h2>${ content.resume.experienceTitle }</h2>
+                    <ul><li><a class="linkedInSmall breathing" target="_blank"  href="${ content.resume.experiencePath }">
+                                ${ lnSmall} ${ content.resume.experienceDescription }
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <div id="resume-projects">
-                    <h3>${ content.resume.projectsTitle }</h3>
-                    <ul>${ projectsArr.join("")
-                            /* content.resume.projectsArr.map( obj => { return`<li class="breathing"><a href="${obj.repo}">${obj.title}</a></li>`; }) */
-                        }
-                        <li><a class="gitHubSmall" href="${ content.resume.projectsPath }" class="breathing">${gitSmall}${ content.resume.projectsInfo }</a></li>
-                    </ul>
+        
+                <div id="resume-about" class="part">
+                    <h2>${ content.resume.aboutTitle }</h2>
+                    
+                    <div id="resume-cert" class="part">
+                        <h3>${ content.resume.certificationsTitle }</h3>
+                        <ul>${ certsArr.join("")
+                                /* content.resume.certsArr.map( str => { return`<li class="breathing">${str} </li>`; }) */
+                            }
+                            <li><a href="${ content.resume.experiencePath }" class="breathing">${ content.resume.certsInfo }</a></li>
+                        </ul>
+                    </div>
+                    <div id="resume-skills" class="part">
+                        <h3>${ content.resume.skillsTitle }</h3>
+                        <ul>${ skillsArr.join("")
+                                /* content.resume.skillsTitle.map( str => { return`<li class="breathing">${str}</li>`; }) */
+                            }
+                        </ul>
+                    </div>
+                    <div id="resume-projects" class="part">
+                        <h3>${ content.resume.projectsTitle }</h3>
+                        <ul>${ projectsArr.join("")
+                                /* content.resume.projectsArr.map( obj => { return`<li class="breathing"><a href="${obj.repo}">${obj.title}</a></li>`; }) */
+                            }
+                            <li><a class="gitHubSmall" href="${ content.resume.projectsPath }" class="breathing">${gitSmall}${ content.resume.projectsInfo }</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
             </article>
         `;
     }
