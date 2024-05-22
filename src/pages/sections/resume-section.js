@@ -54,18 +54,18 @@ export class InteractiveResume extends HTMLElement {
                 }
 
                 div {
-                    padding: 0 0 5dvh 0;
+                    padding: 0 0 5vh 0;
                 }
 
                 h1#resume-title {
                     display: block;
                     text-align: center;
-                    font-size: clamp(.5ch, 15ch, 10dvh);
-                    line-height: clamp(.5ch, 12ch, 8dvh);
+                    font-size: clamp(.5ch, 15ch, 10vh);
+                    line-height: clamp(.5ch, 12ch, 8vh);
 
                     text-shadow: -2px -2px var(--nk-main);
 
-                    height: 25dvh;
+                    height: 25vh;
                 }
                 h1#resume-title::first-line {
                     color: var(--nk-main);
@@ -83,7 +83,7 @@ export class InteractiveResume extends HTMLElement {
 
                     margin: var(--thumbH) auto;
                     padding: var(--standard-pad);
-                    height: 22dvh;
+                    height: 22vh;
                     width: 100dvw;
                     max-width: 120ch;
 
@@ -108,7 +108,7 @@ export class InteractiveResume extends HTMLElement {
 
                             font-weight: bolder;
                             font-size: clamp(.5ch, 6ch, 4dvw);
-                            line-height: clamp(.5ex, 6ex, 4dvh);
+                            line-height: clamp(.5ex, 6ex, 4vh);
 
                             padding: 2%;
                             height: 100%;
@@ -136,7 +136,7 @@ export class InteractiveResume extends HTMLElement {
                     }
                     .messageEmail {
                         svg { fill: #8711d0;
-                            max-height: clamp(.5ex, 5ex, 20dvh);
+                            max-height: clamp(.5ex, 5ex, 20vh);
                         }
                     }
                     .messageEmail:hover {
@@ -176,7 +176,7 @@ export class InteractiveResume extends HTMLElement {
                         list-style: none;
 
                         font-size: clamp(.5ch, 2ch, 2dvw);
-                        line-height: clamp(.5ex, 2ex, 2dvh);
+                        line-height: clamp(.5ex, 2ex, 2vh);
                         
                         a {
                             display: inline-flex;
@@ -244,7 +244,7 @@ export class InteractiveResume extends HTMLElement {
 
                         .topic {
                             width: 100%;
-                            padding: 1dvh 3dvw;
+                            padding: 1vh 3dvw;
 
                             .experience {
                                 padding: 0;

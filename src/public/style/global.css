@@ -4,7 +4,7 @@
 
     --standard-size: 1rem; /* Custom Properties - creates a variable that can be used throughout css */
 
-    --nav-height: clamp(6ch, 7dvh, 12ch);
+    --nav-height: clamp(6ch, 7vh, 12ch);
 
     --preferred-content: 80dvw;
 
@@ -23,7 +23,7 @@
     --standard-pad: clamp(2ch, 2vw, 4ch);
     --extra-pad: clamp(5ch, 4vw, 10ch);
 
-    --content-spacing: 1dvh;
+    --content-spacing: 1vh;
 
     --content-family: 'Montserrat', Helvetica Arial, Arial, sans-serif;
     --heading-family: 'Kufam', Helvetica Arial, sans-serif;
@@ -32,10 +32,10 @@
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
-    --half-line: clamp(.5ch, 5ex, 4dvh);
-    --barely-big-line: clamp(.5ex, 95%, 11dvh);
-    --big-line: clamp(.5ch, 10ex, 8dvh);
-    --big-font: clamp(.5ch, 12ex, 10dvh);
+    --half-line: clamp(.5ch, 5ex, 4vh);
+    --barely-big-line: clamp(.5ex, 95%, 11vh);
+    --big-line: clamp(.5ch, 10ex, 8vh);
+    --big-font: clamp(.5ch, 12ex, 10vh);
     --big-smooshed-font: clamp(.5ch, 10ch, 12dvw);
 
     --section-transition: background-color 1s linear, opacity 1s linear;
@@ -48,7 +48,7 @@
 html {
     margin: 0;
     padding: 0;
-    min-height: 100dvh;
+    min-height: 100vh;
 
     scroll-behavior: smooth;
     font-family: var(--content-family);
@@ -61,7 +61,7 @@ body {
 
     margin: 0;
     padding: 0;
-    min-height: 100dvh;
+    min-height: 100vh;
     
     background: radial-gradient(100% 225% at 100% 0%, #FAFF00 0%, #000000 100%), linear-gradient(235deg, #FF7A00 0%, #000000 100%), linear-gradient(20deg, #241E92 0%, #241E92 30%, #5432D3 calc(30% + 1px), #5432D3 35%, #7B6CF6 calc(35% + 1px), #7B6CF6 50%, #E5A5FF calc(50% + 1px), #E5A5FF 100%), linear-gradient(120deg, #110133 0%, #110133 40%, #00918E calc(40% + 1px), #00918E 60%, #4DD599 calc(60% + 1px), #4DD599 70%, #FFDC34 calc(70% + 1px), #FFDC34 100%);
     background-blend-mode: overlay, hard-light, overlay, normal;
@@ -70,7 +70,7 @@ body {
 main {
     margin: 0 auto;
     padding: 0;
-    min-height: 100dvh;
+    min-height: 100vh;
     max-width: 100dvw;
 
     line-height: calc(1em + 0.5rem);
@@ -192,7 +192,7 @@ footer {
 /**-------------------------------------*/
 
 div.spacer {
-    height: 5dvh;
+    height: 5vh;
 }
 
 /**-----------------------------------
