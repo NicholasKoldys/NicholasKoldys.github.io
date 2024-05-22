@@ -8,52 +8,68 @@ export class ContactForm extends HTMLElement {
     }
 
     connectedCallback() {
-        /** @type {Array<String>} */
-        const images = this.dataset.imageUrls ? JSON.parse(this.dataset.imageUrls) : [ nkLogo ];
-
         this.shadowRoot.innerHTML = /* HTML */`
             <style>
                 :host {
-                    width: 100%;
-                }
-                form {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    
-                    background-color: var(--tertiary-dark);
-                    padding: var(--standard-pad);
+                    display: block;
+                    margin: var(--section-div) auto;
+                    width: var(--content-width);
                 }
 
-                form > :is(input, select, textarea, button) {
+                form {
+                    box-sizing: border-box;
+
+                    display: flex;
+                    flex-direction: column;
+                    align-content: center;
+                    justify-content: space-between;
+                    
+                    border-radius: 2em;
+                    padding: var(--standard-pad);
+                    width: 100%;
+
+                    background-color: var(--section-shadow);
+                    box-shadow: 8px 7px 44px 1px var(--nk-main);
+
+                    h2 {
+                        margin: 0;
+                        margin-bottom: var(--half-line);
+                        line-height: var(--big-font);
+                        font-size: var(--big-font);
+                        text-decoration: underline solid;
+                    }
+                }
+
+                :is(input, select, textarea, button) {
                     font-family: inherit;
                     font-style: inherit;
                     font-size: 100%;
-                    color: black;
+
                     display: inline-block;
-                    box-sizing: border-box;
-                    width: 100%;
+
                     padding: var(--standard-pad);
-                    margin: 2ex 0;
-                    /* border: 1px solid #ccc; */
+                    
                     border-radius: 1ch;
                 }
-                form > label > b { /* BOLD Form Star/Astrisk */
+
+                label > b { /* BOLD Form Star/Astrisk */
                     color: red;
                 }
 
-                form > button[type=submit] {
-                    display: block;
+                button {
                     font-weight: 900;
                     color: inherit;
-                    background-color: #4CAF50;
-                    padding: var(--extra-pad);
-                    margin: 4ex 0;
+                    
+                    display: block;
+                    
                     border: none;
+                    padding: var(--extra-pad);
+                    
+                    background-color: #4CAF50;
                     cursor: pointer;
                     transition: all .2s linear;
                 }
-                form > button[type=submit]:hover {
+                button:hover {
                     color: white;
                     text-shadow: 3px 3px var(--react-dark);
                     background-color: #265e29;
@@ -61,15 +77,13 @@ export class ContactForm extends HTMLElement {
 
                 @media only screen and (max-width: 65ch) {
                     :host {
-                        margin: 0;
-                        padding: 0;
+                        padding: var(--standard-pad) 0;
                         width: 100dvw;
                     }
 
                     form {
                         margin: 0;
-                        padding: 0;
-                        width: 100dvw;
+                        padding: var(--standard-pad) 0;
 
                         .summary {
                             width: 90%;
@@ -78,6 +92,7 @@ export class ContactForm extends HTMLElement {
                 }
             </style>
             <form action="https://formspree.io/f/xrgrpbrv" method="POST">  
+                <h2>Contact Me</H2>
                 <label for="_name">${ content.form.name }:</label>
                     <input type="text" name="_name" placeholder="${ content.form.name }">
                 <label for="_phone">${ content.form.phone }:</label>

@@ -29,6 +29,8 @@ export class InteractiveResume extends HTMLElement {
         this.shadowRoot.innerHTML= /* HTML */`
             <style>
                 :host {
+                    display: block;
+                    margin: var(--section-div) auto;
                 }
 
                 h2 {
@@ -51,94 +53,144 @@ export class InteractiveResume extends HTMLElement {
                     transition: all .5s linear;
                 }
 
+                div {
+                    padding: 0 0 5dvh 0;
+                }
+
                 h1#resume-title {
                     display: block;
                     text-align: center;
-                    font-size: clamp(.5ch, 5ch, 10ch);
-                }
+                    font-size: clamp(.5ch, 15ch, 10dvh);
+                    line-height: clamp(.5ch, 12ch, 8dvh);
 
+                    text-shadow: -2px -2px var(--nk-main);
+
+                    height: 25dvh;
+                }
                 h1#resume-title::first-line {
-                    font-size: clamp(.5ch, 1ch, 5ch);
-                    text-decoration: underline;
-                    text-decoration-thickness: .3ex;
-                }
-
-                div {
-                    padding: 5dvh 0;
+                    color: var(--nk-main);
+                    text-decoration: underline dotted;
+                    text-shadow: -.1ch .1ch var(--section-shadow);
                 }
 
                 #resume-contact {
+                    box-sizing: border-box;
+
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    justify-content: center;
-                }
-
-                #contact-links {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
                     justify-content: space-evenly;
 
-                    height: 10ch;
-                    max-height: 10dvh;
-                    width: 100%;
+                    margin: var(--thumbH) auto;
+                    padding: var(--standard-pad);
+                    height: 22dvh;
+                    width: 100dvw;
+                    max-width: 120ch;
 
-                    a {
-                        display: inline-block;
-                        vertical-align: middle;
-                        text-align: center;
-                        
-                        padding: clamp(0%, 2%, 2ex);
-                        height: 100%;
-                        width: clamp(1ch, 30%, 30%);
-
-                        svg {
-                            box-sizing: border-box;
-                            display: inline-block;
-                            height: 100%;
-                        }
-                    }
-
-                    .linkedInFull {
-                        svg {
-                            width: 100%;
-                            fill: #2766b1;
-                        }
-                    }
-                    .linkedInFull:hover {
-                        svg { fill: #6299dc; }
-                    }
-                    .gitHubFull {
-                        svg { 
-                            width: 100%;
-                            fill: #ffffff; }
-                    }
-                    .gitHubFull:hover {
-                        svg { fill: #6a00ff; }
-                    }
-                    .messageEmail {
+                    #contact-links {
                         display: flex;
                         flex-direction: row;
                         align-items: center;
                         justify-content: space-evenly;
 
-                        svg { fill: #8711d0; }
+                        margin-bottom: calc(var(--thumbH) * 2);
+                        padding: var(--standard-pad);
+                        width: 100%;
+
+                        background-color: var(--section-shadow);
+                        box-shadow: 8px 7px 44px 1px var(--section-shadow);
+
+                        a {
+                            display: inline-flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-evenly;
+
+                            font-weight: bolder;
+                            font-size: clamp(.5ch, 6ch, 4dvw);
+                            line-height: clamp(.5ex, 6ex, 4dvh);
+
+                            padding: 2%;
+                            height: 100%;
+                            width: clamp(1ch, 30%, 30%);
+
+                            svg {
+                                box-sizing: border-box;
+                                display: inline-block;
+                                height: 100%;
+                            }
+                        }
+                    }
+
+                    .linkedInFull {
+                        svg { fill: #2766b1; }
+                    }
+                    .linkedInFull:hover {
+                        svg { fill: #6299dc; }
+                    }
+                    .gitHubFull {
+                        svg { fill: #ffffff; }
+                    }
+                    .gitHubFull:hover {
+                        svg { fill: #6a00ff; }
+                    }
+                    .messageEmail {
+                        svg { fill: #8711d0;
+                            max-height: clamp(.5ex, 5ex, 20dvh);
+                        }
                     }
                     .messageEmail:hover {
                         svg { fill: #f201ff; }
                     }
                 }
 
-                #resume-back > ul > li > pre {
-                    /* display: flex; */
-                    overflow: hidden;
+                .topic {
+                    box-sizing: border-box;
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-evenly;
+
+                    margin: auto auto;
+                    padding: 0 2dvw;
+                    width: var(--inner-width);
+
+                    .experience {
+                        padding: 0 2dvw;
+                    }
+
+                    .about {
+                        padding: 0 4dvw;
+                    }
+
+                    #resume-obj {
+                        p {
+                            width: var(--inner-width);
+                        }
+                    }
+
+                    li.big {
+                        background-color: var(--section-shadow);
+                        box-shadow: 8px 7px 44px 1px var(--section-shadow);
+                        list-style: none;
+
+                        font-size: clamp(.5ch, 2ch, 2dvw);
+                        line-height: clamp(.5ex, 2ex, 2dvh);
+                        
+                        a {
+                            display: inline-flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                        }
+                    }
                 }
 
                 .linkedInSmall {
                     svg {
                         fill: #6299dc;
-                        width: 4ch;
+                        width: calc(var(--thumbW) * 2);
                         height: auto;
                         padding: 0 2ch;
                     }
@@ -147,7 +199,7 @@ export class InteractiveResume extends HTMLElement {
                 .gitHubSmall {
                     svg {
                         fill: #ffffff;
-                        width: 4ch;
+                        width: calc(var(--thumbW) * 2);
                         height: auto;
                         padding: 0 2ch;
                     }
@@ -178,21 +230,26 @@ export class InteractiveResume extends HTMLElement {
 
                 @media only screen and (max-width: 65ch) {
                     :host {
-                        width: 100dvw;
+                        width: 100%;
                     }
-                    #resume {
-                        .part {
-                            margin: auto;
-                            width: 95dvw;
 
-                            div {
-                                width: 100%;
+                    #resume {
+                        width: 100%;
+                        #resume-contact {
+                            padding: 0;
+                            #contact-links {
                                 padding: 0;
                             }
+                        }
 
-                            ul {
-                                display: block;
-                                width: 100%;
+                        .topic {
+                            width: 100%;
+                            padding: 1dvh 3dvw;
+
+                            .experience {
+                                padding: 0;
+                            }
+                            .about {
                                 padding: 0;
                             }
                         }
@@ -213,56 +270,61 @@ export class InteractiveResume extends HTMLElement {
                     </div>
                 </div>
                 
-                <div id="resume-obj" class="part">
-                    <h2>${ content.resume.objectiveTitle }</h2>
-                    <p>${ content.resume.objective }</p>
-                </div>
-        
-                <div id="resume-back" class="part">
-                    <h2>${ content.resume.educationTitle }</h2>
-                    <ul><li><h3>${ content.resume.school1 }</h3><pre>${ content.resume.degree1 }</pre></li>
-                        <li><h3>${ content.resume.school2 }</h3><pre>${ content.resume.degree2 }</pre></li>
-                    </ul>
-                </div>
-        
-                <!--◆	9670	25C6	 	BLACK DIAMOND
-                    ◇	9671	25C7	 	WHITE DIAMOND
-                    ◈	9672	25C8	 	WHITE DIAMOND CONTAINING BLACK SMALL DIAMOND-->
-        
-                <div id="resume-exp" class="part">
-                    <h2>${ content.resume.experienceTitle }</h2>
-                    <ul><li><a class="linkedInSmall breathing" target="_blank"  href="${ content.resume.experiencePath }">
-                                ${ lnSmall} ${ content.resume.experienceDescription }
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-        
-                <div id="resume-about" class="part">
-                    <h2>${ content.resume.aboutTitle }</h2>
-                    
-                    <div id="resume-cert" class="part">
-                        <h3>${ content.resume.certificationsTitle }</h3>
-                        <ul>${ certsArr.join("")
-                                /* content.resume.certsArr.map( str => { return`<li class="breathing">${str} </li>`; }) */
-                            }
-                            <li><a href="${ content.resume.experiencePath }" class="breathing">${ content.resume.certsInfo }</a></li>
-                        </ul>
-                    </div>
-                    <div id="resume-skills" class="part">
-                        <h3>${ content.resume.skillsTitle }</h3>
-                        <ul>${ skillsArr.join("")
-                                /* content.resume.skillsTitle.map( str => { return`<li class="breathing">${str}</li>`; }) */
-                            }
-                        </ul>
-                    </div>
-                    <div id="resume-projects" class="part">
-                        <h3>${ content.resume.projectsTitle }</h3>
-                        <ul>${ projectsArr.join("")
-                                /* content.resume.projectsArr.map( obj => { return`<li class="breathing"><a href="${obj.repo}">${obj.title}</a></li>`; }) */
-                            }
-                            <li><a class="gitHubSmall" href="${ content.resume.projectsPath }" class="breathing">${gitSmall}${ content.resume.projectsInfo }</a></li>
-                        </ul>
+                <div class="topic">
+                    <div class="experience">
+
+                        <div id="resume-obj" class="part">
+                            <h2>${ content.resume.objectiveTitle }</h2>
+                            <p>${ content.resume.objective }</p>
+                        </div>
+                
+                        <div id="resume-back" class="part">
+                            <h2>${ content.resume.educationTitle }</h2>
+                            <ul><li><h3>${ content.resume.school1 }</h3><pre>${ content.resume.degree1 }</pre></li>
+                                <li><h3>${ content.resume.school2 }</h3><pre>${ content.resume.degree2 }</pre></li>
+                            </ul>
+                        </div>
+                
+                        <!--◆	9670	25C6	 	BLACK DIAMOND
+                            ◇	9671	25C7	 	WHITE DIAMOND
+                            ◈	9672	25C8	 	WHITE DIAMOND CONTAINING BLACK SMALL DIAMOND-->
+                
+                        <div id="resume-exp" class="part">
+                            <h2>${ content.resume.experienceTitle }</h2>
+                            <ul><li class="big"><a class="linkedInSmall breathing" target="_blank"  href="${ content.resume.experiencePath }">
+                                        ${ lnSmall} ${ content.resume.experienceDescription }
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div >
+            
+                    <div id="resume-about" class="about">
+                        <h2>${ content.resume.aboutTitle }</h2>
+                        
+                        <div id="resume-cert" class="part">
+                            <h3>${ content.resume.certificationsTitle }</h3>
+                            <ul>${ certsArr.join("")
+                                    /* content.resume.certsArr.map( str => { return`<li class="breathing">${str} </li>`; }) */
+                                }
+                                <li><a href="${ content.resume.experiencePath }" class="breathing">${ content.resume.certsInfo }</a></li>
+                            </ul>
+                        </div>
+                        <div id="resume-skills" class="part">
+                            <h3>${ content.resume.skillsTitle }</h3>
+                            <ul>${ skillsArr.join("")
+                                    /* content.resume.skillsTitle.map( str => { return`<li class="breathing">${str}</li>`; }) */
+                                }
+                            </ul>
+                        </div>
+                        <div id="resume-projects" class="part">
+                            <h3>${ content.resume.projectsTitle }</h3>
+                            <ul>${ projectsArr.join("")
+                                    /* content.resume.projectsArr.map( obj => { return`<li class="breathing"><a href="${obj.repo}">${obj.title}</a></li>`; }) */
+                                }
+                                <li class="big"><a class="gitHubSmall breathing" href="${ content.resume.projectsPath }">${gitSmall}${ content.resume.projectsInfo }</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </article>

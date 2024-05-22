@@ -19,6 +19,8 @@ export class ProjectCard extends HTMLElement {
                 :host {
                     box-sizing: border-box;
                     display: block;
+                    
+                    margin: auto auto;
                     width: 100%;
                 }
 
@@ -31,13 +33,14 @@ export class ProjectCard extends HTMLElement {
                     align-items: center;
 
                     background-color: var(--section-shadow);
+                    box-shadow: 8px 7px 44px 1px var(--section-shadow);
+
                     opacity: 1;
                     transition: var(--section-transition);
 
-                    margin: 0 auto;
-                    width: var(--inner-width);
+                    margin: var(--thumbH) auto;
+                    width: var(--content-width);
 
-                    margin-bottom: 15ex;
                     padding: 1%;
                     border: 1px #fff solid;
                 }
@@ -66,7 +69,7 @@ export class ProjectCard extends HTMLElement {
 
                 .project-desc > p {
                     height: clamp( 10ex, auto, 50ex );
-                    width: 100%;
+                    width: var(--inner-width);
                     overflow: auto;
                 }
 

@@ -9,6 +9,8 @@ export class NavBar extends HTMLElement {
             <!-- <link rel="preload" href=${'./navbar.module.css'} as="style" /> -->
             <style>
                 :host {
+                    display: block;
+
                     height: var(--nav-height);
                     width: 100dvw;
                     

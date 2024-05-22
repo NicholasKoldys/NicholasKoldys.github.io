@@ -29,10 +29,29 @@ export class ProjectsSection extends HTMLElement {
         this.shadowRoot.innerHTML= /* HTML */`
             <style>
                 :host {
+                    display: block;
                     margin: auto auto;
-                    width: var(--preferred-content);
+                }
+
+                h2 {
+                    text-align: center;
+                    margin: 0;
+                    margin-bottom: var(--half-line);
+                    line-height: var(--barely-big-line);
+                    font-size: var(--big-smooshed-font);
+                    text-decoration: underline solid;
+                }
+
+                @media only screen and (max-width: 65ch) {
+                    :host {
+                        margin: 0;
+                        padding: 0;
+                        width: 100dvw;
+                    }
                 }
             </style>
+
+            <h2>My Projects</h2>
 
             <project-card data-main-image-url="${matsoMain}" data-image-urls='["${matso1}", "${matso4}"]'>
                 <h3 slot="title">${ content.projects.matso.title }</h3>

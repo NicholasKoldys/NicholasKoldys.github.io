@@ -6,6 +6,8 @@ export class HiddenMenu extends HTMLElement {
         this.attachShadow({ mode: "open" }).innerHTML = /* HTML */ `
             <style>
                 :host {
+                    display: block;
+                    margin: auto var(--content-spacing);
                     height: 100%;
                 }
 

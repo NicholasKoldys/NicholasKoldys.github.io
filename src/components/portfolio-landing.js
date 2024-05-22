@@ -8,7 +8,9 @@ export class PortfolioLanding extends HTMLElement {
 
             <style>
                 :host {
-                    
+                    display: block;
+                    margin: 0 auto var(--section-div) auto;
+                    width: 100%;
                 }
 
                 .container {
@@ -20,10 +22,11 @@ export class PortfolioLanding extends HTMLElement {
                     background-color: var(--section-shadow);
                     opacity: 1;
                     transition: var(--section-transition);
+                    <!-- box-shadow: 0px -50px var(--nav-height) var(--nav-height) var(--section-shadow); -->
 
                     margin: auto auto;
-                    padding: var(--extra-pad);
-                    width: var(--preferred-content);
+                    padding: var(--extra-pad) 0;
+                    width: 100%;
                 }
 
                 #name-main-pic {
@@ -31,6 +34,15 @@ export class PortfolioLanding extends HTMLElement {
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
+
+                    h1 {
+                        text-align: center;
+                        margin: 0;
+                        margin-bottom: var(--half-line);
+                        line-height: var(--barely-big-line);
+                        font-size: var(--big-smooshed-font);
+                        text-decoration: underline solid;
+                    }
                 }
 
                 #eye-candy-1 {
@@ -49,14 +61,10 @@ export class PortfolioLanding extends HTMLElement {
 
                 @media only screen and (max-width: 65ch) {
                     :host {
-                        margin: 0;
-                        padding: 0;
-                        width: 100dvw;
                     }
 
                     .container {
                         margin: 0;
-                        padding: 0;
                         width: 100dvw;
 
                         .summary {
