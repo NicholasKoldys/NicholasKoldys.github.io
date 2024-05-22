@@ -9,11 +9,16 @@
     --preferred-content: 80dvw;
 
     --content-height: clamp(25ex, 90vh, 200ex);
-    --content-width: clamp(20ch, 100%, 115ch);
+    --content-width: clamp(20ch,  80dvw, 115ch);
 
-    --inner-width: clamp(10ch, 100%, 110ch);
+    --inner-width: clamp(10ch, 100%, 80ch);
 
     --mobile-cutoff: 65ch;
+
+    --section-div: 10ex;
+
+    --thumbH: 5ex;
+    --thumbW: 5ch;
 
     --standard-pad: clamp(2ch, 2vw, 4ch);
     --extra-pad: clamp(5ch, 4vw, 10ch);
@@ -27,6 +32,12 @@
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
+    --half-line: clamp(.5ch, 5ex, 4dvh);
+    --barely-big-line: clamp(.5ex, 95%, 11dvh);
+    --big-line: clamp(.5ch, 10ex, 8dvh);
+    --big-font: clamp(.5ch, 12ex, 10dvh);
+    --big-smooshed-font: clamp(.5ch, 10ch, 12dvw);
+
     --section-transition: background-color 1s linear, opacity 1s linear;
 }
 
@@ -34,13 +45,11 @@
     box-sizing: border-box;
 }
 
-* {
-    padding: 0;
-    margin: 0;
-}
-
-
 html {
+    margin: 0;
+    padding: 0;
+    min-height: 100dvh;
+
     scroll-behavior: smooth;
     font-family: var(--content-family);
     color: var(--text-primary); /*Text Color*/
@@ -59,10 +68,10 @@ body {
 }
 
 main {
+    margin: 0 auto;
+    padding: 0;
     min-height: 100dvh;
     max-width: 100dvw;
-
-    margin: 0 auto;
 
     line-height: calc(1em + 0.5rem);
     -webkit-font-smoothing: antialiased;
@@ -153,14 +162,16 @@ footer {
     flex-direction: row;
 
     max-width: 100dvw;
-}
+    background-color: var(--section-shadow);
+    box-shadow: 0px -50px var(--nav-height) var(--nav-height) var(--section-shadow);
 
-footer > nav > ul {
-    list-style-type: none;
-}
+    ul {
+        list-style-type: none;
+    }
 
-footer > .footer-section {
-    margin: .5rem 0;
+    .footer-section {
+        margin: .5rem 0;
+    }
 }
 
 /**-----------------------------------
@@ -180,20 +191,8 @@ footer > .footer-section {
 /**---Index - Content Sections
 /**-------------------------------------*/
 
-section.section {
-    /* background-color: var(--section-shadow);
-    opacity: 1;
-    transition: var(--section-transition); */
-
-    /* padding: var(--extra-pad); */
-
-    width: var(--content-width);
-    margin: var(--content-spacing) auto;
-
-    @media only screen and (max-width: 65ch) {
-        padding: 0;
-        width: auto;
-    }
+div.spacer {
+    height: 5dvh;
 }
 
 /**-----------------------------------
