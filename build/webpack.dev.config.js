@@ -2,7 +2,6 @@ import path from 'node:path';
 import { commonConfig } from "./webpack.base.config.js";
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import 'style-loader';
 
 process.env.NODE_ENV = 'development'
 
