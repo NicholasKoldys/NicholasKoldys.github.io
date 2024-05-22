@@ -1,4 +1,4 @@
-name: HostPublic
+name: HostDist
 
 on:
   # push:
