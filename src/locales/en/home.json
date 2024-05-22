@@ -24,7 +24,7 @@
             "website" : ""
         }, 
         "inventoryManagementSystem" : {
-            "title" : "Java - Inventory Management System<",
+            "title" : "Java - Inventory Management System",
             "description" : "Controlling data by creating, reading, updating, and deleting it, is the bread, butter, and soul of software developers. This software project is my take from the graphical user interface to the database, on how these applications should be set up. Please feel free to view my code and view the demo of this project by following the \"learn more\" link.", 
             "gitPath" : "https://github.com/NicholasKoldys/inventory-management-system",
             "website" : ""
