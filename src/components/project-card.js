@@ -1,20 +1,22 @@
-import nkLogo from '../assets/img/nkLogo.svg';
+import nkLogo from "../assets/img/nkLogo.svg";
 
 export class ProjectCard extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow( {mode: 'open'} );
-    }
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
 
-    connectedCallback() {
-        /** @type {Array<String>} */
-        const images = this.dataset.imageUrls ? JSON.parse(this.dataset.imageUrls) : [ nkLogo ];
+  connectedCallback() {
+    /** @type {Array<String>} */
+    const images = this.dataset.imageUrls
+      ? JSON.parse(this.dataset.imageUrls)
+      : [nkLogo];
 
-        const imageElements = images.map(url => {
-            return /* HTML */ `<img src=${url} alt=""/>`;
-        });
+    const imageElements = images.map((url) => {
+      return /* HTML */ `<img src=${url} alt="" />`;
+    });
 
-        this.shadowRoot.innerHTML = /* HTML */`
+    this.shadowRoot.innerHTML = /* HTML */ `
             <style>
                 :host {
                     box-sizing: border-box;
@@ -36,7 +38,7 @@ export class ProjectCard extends HTMLElement {
                     box-shadow: 8px 7px 44px 1px var(--section-shadow);
 
                     opacity: 1;
-                    transition: var(--section-transition);
+                    transition: var(--section-bkg-opac-transition);
 
                     margin: var(--thumbH) auto;
                     width: var(--content-width);
@@ -87,7 +89,7 @@ export class ProjectCard extends HTMLElement {
                 <slot name="title"></slot>
                 <img class="project-img" src="${this.dataset.mainImageUrl}" alt=""/>
                 <div class="image-selection">
-                    ${ imageElements.join("") }
+                    ${imageElements.join("")}
                 </div>
                 <div class="project-desc">
                     <slot name="description">
@@ -96,7 +98,7 @@ export class ProjectCard extends HTMLElement {
                 </div>
             </article>
         `;
-    }
+  }
 }
 
-customElements.define( "project-card", ProjectCard );
+customElements.define("project-card", ProjectCard);

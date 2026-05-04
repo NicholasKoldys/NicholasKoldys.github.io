@@ -1,156 +1,213 @@
 :root {
-    --max-width: 1100px;
-    --border-radius: 12px;
+  --max-width: 1100px;
+  --border-radius: 12px;
 
-    --standard-size: 1rem; /* Custom Properties - creates a variable that can be used throughout css */
+  --standard-size: 1rem; /* Custom Properties - creates a variable that can be used throughout css */
 
-    --nav-height: clamp(6ch, 7vh, 12ch);
+  --nav-height: clamp(6ch, 7vh, 12ch);
 
-    --preferred-content: 80dvw;
+  --preferred-content: 80dvw;
 
-    --content-height: clamp(25ex, 90vh, 200ex);
-    --content-width: clamp(20ch,  80dvw, 115ch);
+  --content-height: clamp(25ex, 90vh, 200ex);
+  --content-width: clamp(20ch, 80dvw, 115ch);
 
-    --inner-width: clamp(10ch, 100%, 80ch);
+  --inner-width: clamp(10ch, 100%, 80ch);
 
-    --mobile-cutoff: 65ch;
+  --mobile-cutoff: 65ch;
 
-    --section-div: 10ex;
+  --section-div: 10ex;
 
-    --thumbH: 5ex;
-    --thumbW: 5ch;
+  --thumbH: 5ex;
+  --thumbW: 5ch;
 
-    --standard-pad: clamp(2ch, 2vw, 4ch);
-    --extra-pad: clamp(5ch, 4vw, 10ch);
+  --fixed-pad: 0.8em;
+  --standard-pad: clamp(2ch, 2vw, 4ch);
+  --extra-pad: clamp(5ch, 4vw, 10ch);
 
-    --content-spacing: 1vh;
+  --content-spacing: 1vh;
 
-    --content-family: 'Montserrat', Helvetica Arial, Arial, sans-serif;
-    --heading-family: 'Kufam', Helvetica Arial, sans-serif;
+  --content-family: "Montserrat", Helvetica Arial, Arial, sans-serif;
+  --heading-family: "Kufam", Helvetica Arial, sans-serif;
 
-    --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono:
+    ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-    --half-line: clamp(.5ch, 5ex, 4vh);
-    --barely-big-line: clamp(.5ex, 95%, 11vh);
-    --big-line: clamp(.5ch, 10ex, 8vh);
-    --big-font: clamp(.5ch, 12ex, 10vh);
-    --big-smooshed-font: clamp(.5ch, 10ch, 12dvw);
+  --half-line: clamp(0.5ch, 5ex, 4vh);
+  --barely-big-line: clamp(0.5ex, 95%, 11vh);
+  --big-line: clamp(0.5ch, 10ex, 8vh);
+  --big-font: clamp(0.5ch, 12ex, 10vh);
+  --big-smooshed-font: clamp(0.5ch, 10ch, 12dvw);
+  --bento-large-font: clamp(0.5ch, 4ch, 8dvw);
+  --bento-xlarge-font: clamp(0.5ch, 8ch, 12dvw);
 
-    --section-transition: background-color 1s linear, opacity 1s linear;
+  --section-bkg-opac-transition: background-color 1s linear, opacity 1s linear;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 
-    scroll-behavior: smooth;
-    font-family: var(--content-family);
-    color: var(--text-primary); /*Text Color*/
+  scroll-behavior: smooth;
+  font-family: var(--content-family);
+  color: var(--text-primary); /*Text Color*/
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    
-    background: radial-gradient(100% 225% at 100% 0%, #FAFF00 0%, #000000 100%), linear-gradient(235deg, #FF7A00 0%, #000000 100%), linear-gradient(20deg, #241E92 0%, #241E92 30%, #5432D3 calc(30% + 1px), #5432D3 35%, #7B6CF6 calc(35% + 1px), #7B6CF6 50%, #E5A5FF calc(50% + 1px), #E5A5FF 100%), linear-gradient(120deg, #110133 0%, #110133 40%, #00918E calc(40% + 1px), #00918E 60%, #4DD599 calc(60% + 1px), #4DD599 70%, #FFDC34 calc(70% + 1px), #FFDC34 100%);
-    background-blend-mode: overlay, hard-light, overlay, normal;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(100% 225% at 100% 0%, #faff00 0%, #000000 100%),
+    linear-gradient(235deg, #ff7a00 0%, #000000 100%),
+    linear-gradient(
+      20deg,
+      #241e92 0%,
+      #241e92 30%,
+      #5432d3 calc(30% + 1px),
+      #5432d3 35%,
+      #7b6cf6 calc(35% + 1px),
+      #7b6cf6 50%,
+      #e5a5ff calc(50% + 1px),
+      #e5a5ff 100%
+    ),
+    linear-gradient(
+      120deg,
+      #110133 0%,
+      #110133 40%,
+      #00918e calc(40% + 1px),
+      #00918e 60%,
+      #4dd599 calc(60% + 1px),
+      #4dd599 70%,
+      #ffdc34 calc(70% + 1px),
+      #ffdc34 100%
+    );
+  background-blend-mode: overlay, hard-light, overlay, normal;
 }
 
 main {
-    margin: 0 auto;
-    padding: 0;
-    min-height: 100vh;
-    max-width: 100dvw;
+  margin: 0 auto;
+  padding: 0;
+  min-height: 100vh;
+  max-width: 100dvw;
 
-    line-height: calc(1em + 0.5rem);
-    -webkit-font-smoothing: antialiased;
+  line-height: calc(1em + 0.5rem);
+  -webkit-font-smoothing: antialiased;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 header {
-    width: 100%;
-    padding-bottom: var(--content-spacing);
-    margin-bottom: var(--nav-height);
+  width: 100%;
+  padding-bottom: var(--content-spacing);
+  margin-bottom: var(--nav-height);
 }
 
-img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
-input, button, textarea, select {
-    font: inherit;
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 a {
-    color: var(--text-primary);
-    text-decoration: none;
+  color: var(--text-primary);
+  text-decoration: none;
 }
 
 a:visited {
-    color: var(--text-primary);
+  color: var(--text-primary);
 }
 
 a:hover {
-    color: var(--text-primary);
+  color: var(--text-primary);
 }
 
 a[href^="http"]::after {
-    background: url(https://upload.wikimedia.org/wikipedia/commons/d/d9/VisualEditor_-_Icon_-_External-link.svg) no-repeat right;
-    padding-right: 1.2ch;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/d/d9/VisualEditor_-_Icon_-_External-link.svg)
+    no-repeat right;
+  padding-right: 1.2ch;
 }
 
 a[href$=".pdf"] {
-    /* content: " [PDF]"; */
-    background: url(https://upload.wikimedia.org/wikipedia/commons/3/38/Icon_pdf_file.svg) no-repeat right;
-    padding-right: 1.2ch;
+  /* content: " [PDF]"; */
+  background: url(https://upload.wikimedia.org/wikipedia/commons/3/38/Icon_pdf_file.svg)
+    no-repeat right;
+  padding-right: 1.2ch;
 }
 
 a[mailto] {
-    background: url(https://upload.wikimedia.org/wikipedia/commons/4/42/Icon_External_Link_E-Mail.png) no-repeat right;
-    padding-right: 1.2ch;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/4/42/Icon_External_Link_E-Mail.png)
+    no-repeat right;
+  padding-right: 1.2ch;
 }
 
-h1, h2 {
-    font-family: var(--heading-family);
+h1,
+h2 {
+  font-family: var(--heading-family);
 }
 
-h3, p, pre, a {
-    font-family: var(--content-family);
+h3,
+p,
+pre,
+a {
+  font-family: var(--content-family);
 }
 
 h1 {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 h2 {
-    font-size: 1.6em;
+  font-size: 1.6em;
 }
 
 h3 {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 p {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 [id] {
-    scroll-margin-top: 7ex;
+  scroll-margin-top: 7ex;
 }
 
 /**-----------------------------------
@@ -158,20 +215,21 @@ p {
 /**-------------------------------------*/
 
 footer {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 
-    max-width: 100dvw;
-    background-color: var(--section-shadow);
-    box-shadow: 0px -50px var(--nav-height) var(--nav-height) var(--section-shadow);
+  max-width: 100dvw;
+  background-color: var(--section-shadow);
+  box-shadow: 0px -50px var(--nav-height) var(--nav-height)
+    var(--section-shadow);
 
-    ul {
-        list-style-type: none;
-    }
+  ul {
+    list-style-type: none;
+  }
 
-    .footer-section {
-        margin: .5rem 0;
-    }
+  .footer-section {
+    margin: 0.5rem 0;
+  }
 }
 
 /**-----------------------------------
@@ -179,12 +237,12 @@ footer {
 /**-------------------------------------*/
 
 .shade-overlay-light {
-    opacity: .15;
+  opacity: 0.15;
 }
 
 .shade-overlay-heavy {
-    color: var(--primary-dark);
-    opacity: 0;
+  color: var(--primary-dark);
+  opacity: 0;
 }
 
 /**-----------------------------------
@@ -192,7 +250,7 @@ footer {
 /**-------------------------------------*/
 
 div.spacer {
-    height: 5vh;
+  height: 5vh;
 }
 
 /**-----------------------------------
@@ -202,28 +260,22 @@ div.spacer {
 /* NOTE: This section must fall after changes or it will be overwritten */
 
 @media all {
-
 }
 
 @media screen and (orientation: landscape) {
-
 }
 
 @media screen and (min-width: 30em) and (orientation: landscape) {
-
 }
 
 /* Printers and Print related dispalys */
 @media print {
-    
 }
 
 /* Screen Reading devices */
 @media speech {
-    
 }
 
 /* Non-Print or Non-Speech */
 @media screen {
-    
 }

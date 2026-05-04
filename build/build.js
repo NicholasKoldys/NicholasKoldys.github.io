@@ -1,28 +1,28 @@
 /* eslint-disable no-console */
-import webpack from 'webpack';
-import webpackConfig from './webpack.prod.config.js';
-import { logg } from '../utils/logger.js';
+import webpack from "webpack";
+import webpackConfig from "./webpack.prod.config.js";
+import { logg } from "../utils/logger.js";
 
 webpack(webpackConfig).run((err, stats) => {
-    if (err) {
-        logg( 0, err );
-        return 1;
-    }
+  if (err) {
+    logg(0, err);
+    return 1;
+  }
 
-    const jsonStats = stats.toJson();
+  const jsonStats = stats.toJson();
 
-    if(jsonStats.hasErrors) {
-        return jsonStats.errors.map(error => logg( 1, error ));
-    }
+  if (jsonStats.hasErrors) {
+    return jsonStats.errors.map((error) => logg(1, error));
+  }
 
-    if(jsonStats.hasWarnings) {
-        logg( 2, 'Webpack generated the following warnings: ');
-        jsonStats.warnings.map(warning => logg( 2, warning));
-    }
+  if (jsonStats.hasWarnings) {
+    logg(2, "Webpack generated the following warnings: ");
+    jsonStats.warnings.map((warning) => logg(2, warning));
+  }
 
-    logg( 4, `Webpack stats: ${stats}`);
+  logg(4, `Webpack stats: ${stats}`);
 
-    logg( 4, 'App built to dist/');
+  logg(4, "App built to dist/");
 
-    return 0;
+  return 0;
 });

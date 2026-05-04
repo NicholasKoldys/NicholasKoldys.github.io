@@ -1,14 +1,14 @@
 /* eslint-disable no-console */
-import express from 'express';
-import Webpack from 'webpack';
-import webpackConfig from './webpack.dev.config.js';
+import express from "express";
+import Webpack from "webpack";
+import webpackConfig from "./webpack.dev.config.js";
 /* // ! USE IN DEV ONLY */
-import middleware from 'webpack-dev-middleware';
-import { logg } from '../utils/logger.js';
+import middleware from "webpack-dev-middleware";
+import { logg } from "../utils/logger.js";
 
 const PORT = 3299;
 const server = express();
-const compiler = Webpack( webpackConfig );
+const compiler = Webpack(webpackConfig);
 
 /**
  * * Callback for response injection.
@@ -18,26 +18,25 @@ const compiler = Webpack( webpackConfig );
  */
 
 /**
- * 
- * @param {string} path 
+ *
+ * @param {string} path
  * @param {pathResponse} callback
  */
-export function apiInjectionPoint( path, callback ) {
-    app.get( path, ( req, res ) => {
-        callback( req, res );
-    } );
+export function apiInjectionPoint(path, callback) {
+  app.get(path, (req, res) => {
+    callback(req, res);
+  });
 }
 
-
-server.use( 
-    middleware(compiler, { 
-        // noInfo: true,
-        // publicPath: `/`
-    })
+server.use(
+  middleware(compiler, {
+    // noInfo: true,
+    // publicPath: `/`
+  }),
 );
 
-logg( 1, `Hosting at: http://localhost:${PORT}\n\n` );
+logg(1, `Hosting at: http://localhost:${PORT}\n\n`);
 
-server.listen(PORT, function(err) {
-    if(err) logg( 3, err );
+server.listen(PORT, function (err) {
+  if (err) logg(3, err);
 });

@@ -1,6 +1,6 @@
 import menuIcon from "../assets/img/menuIcon.svg";
 
-export class HiddenMenu extends HTMLElement {
+export class SimpleDropdownMenu extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" }).innerHTML = /* HTML */ `
@@ -125,9 +125,7 @@ export class HiddenMenu extends HTMLElement {
         </button>
         <ul class="menu-list hidden">
           <li><a href="#section-1">Home</a></li>
-          <li><a href="#section-2">Projects</a></li>
           <li><a href="#section-3">Message Me</a></li>
-          <li><a href="#section-4">Resume</a></li>
         </ul>
       </nav>
     `;
@@ -181,4 +179,4 @@ export class HiddenMenu extends HTMLElement {
   }
 }
 
-customElements.define("hidden-menu", HiddenMenu);
+customElements.define("simple-dropdown-menu", SimpleDropdownMenu);
